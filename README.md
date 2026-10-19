@@ -36,6 +36,7 @@ One file per issue, in `feedback/`. Each file follows the bounty template: Short
 | `feedback/22-voucher-closed-while-docs-promise-claim.md` | normal | contracts | Voucher campaign over, budget 0, claim() reverts while docs promise a claimable credit |
 | `feedback/23-single-owner-eoa-controls-perps-stack.md` | normal | contracts | One EOA owns every core perps contract and the shared pool beacon |
 | `feedback/24-perps-contracts-source-unverified.md` | normal | contracts | No perps contract has published source on the explorer |
+| `feedback/25-docs-markets-that-do-not-exist.md` | normal | docs | Six documented perps markets do not exist in any registry |
 
 ## Reproducing
 

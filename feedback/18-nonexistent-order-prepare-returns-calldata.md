@@ -29,6 +29,13 @@ Session B (19 Oct 2026, ~12:15 UTC, fresh wallet + fresh bearer):
 - run2: GET=404 order_not_found | DELETE=200 | PATCH=200
 
 Raw request/response captures kept alongside this file for each run.
+On-chain verification, 19 October 2026 (~12:35 UTC), eth_call against https://50312.rpc.thirdweb.com on pool 0x440f5a79857cd632ae45439410969c3f4049cc41:
+- DELETE calldata 0xdbc91396...038d7ea4c67fff -> execution reverted, data "0x8080c2ed" -> IncorrectOrder()
+- PATCH reduce calldata 0x58b91c42... -> execution reverted, data "0x8080c2ed" -> IncorrectOrder()
+So the API's 200 prepare is a guaranteed-failing transaction: the caller signs and broadcasts a revert.
+
+
+On-chain check (read-only eth_call, no transaction): both prepared calldata payloads revert on the pool contract with the custom error `IncorrectOrder()` (selector 0x8080c2ed) — the "ready to sign" transaction the API returns can never succeed.
 
 ## Environment
 - API: https://api.testnet.dreamdex.io (v0), 19 October 2026
