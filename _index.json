@@ -94,5 +94,47 @@
   "severity": "normal",
   "area": "API",
   "title": "POST /v0/auth/login with a non-JSON Content-Type returns 500 internal_error and leaks a V8 exception string"
+ },
+ {
+  "file": "18-nonexistent-order-prepare-returns-calldata.md",
+  "severity": "normal",
+  "area": "API",
+  "title": "Cancel/reduce prepares return calldata for nonexistent order ids"
+ },
+ {
+  "file": "19-leverage-above-doc-max-accepted.md",
+  "severity": "normal",
+  "area": "API",
+  "title": "Leverage above documented per-market maximum accepted, amount minimum enforced"
+ },
+ {
+  "file": "20-pools-without-stop-order-registry.md",
+  "severity": "normal",
+  "area": "contracts",
+  "title": "9 of 24 pools have no stop-order registry while docs advertise TP/SL"
+ },
+ {
+  "file": "21-pools-outside-insurance-tier-ladder.md",
+  "severity": "normal",
+  "area": "contracts",
+  "title": "Three pools outside the insurance-fund tier while docs present that stage"
+ },
+ {
+  "file": "22-voucher-closed-while-docs-promise-claim.md",
+  "severity": "normal",
+  "area": "contracts",
+  "title": "Voucher campaign over, budget 0, claim() reverts while docs promise a claimable credit"
+ },
+ {
+  "file": "23-single-owner-eoa-controls-perps-stack.md",
+  "severity": "normal",
+  "area": "contracts",
+  "title": "One EOA owns every core perps contract and the shared pool beacon"
+ },
+ {
+  "file": "24-perps-contracts-source-unverified.md",
+  "severity": "normal",
+  "area": "contracts",
+  "title": "No perps contract has published source on the explorer"
  }
 ]

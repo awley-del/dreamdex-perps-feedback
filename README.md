@@ -29,6 +29,13 @@ One file per issue, in `feedback/`. Each file follows the bounty template: Short
 | `feedback/15-docs-testnet-base-url-points-to-stg-not-api-testnet.md` | normal | docs | Docs testnet base URL points at stg host; api.testnet undocumented |
 | `feedback/16-nul-byte-path-returns-400-empty-violating-json-error-contract.md` | normal | API | NUL byte in path -> 400 with empty body, no JSON error contract |
 | `feedback/17-login-non-json-content-type-500-leaks-v8-error.md` | normal | API | Login with non-JSON Content-Type -> 500 leaking a V8 exception |
+| `feedback/18-nonexistent-order-prepare-returns-calldata.md` | normal | API | Cancel/reduce prepares return calldata for nonexistent order ids |
+| `feedback/19-leverage-above-doc-max-accepted.md` | normal | API | Leverage above documented per-market maximum accepted, amount minimum enforced |
+| `feedback/20-pools-without-stop-order-registry.md` | normal | contracts | 9 of 24 pools have no stop-order registry while docs advertise TP/SL |
+| `feedback/21-pools-outside-insurance-tier-ladder.md` | normal | contracts | Three pools outside the insurance-fund tier while docs present that stage |
+| `feedback/22-voucher-closed-while-docs-promise-claim.md` | normal | contracts | Voucher campaign over, budget 0, claim() reverts while docs promise a claimable credit |
+| `feedback/23-single-owner-eoa-controls-perps-stack.md` | normal | contracts | One EOA owns every core perps contract and the shared pool beacon |
+| `feedback/24-perps-contracts-source-unverified.md` | normal | contracts | No perps contract has published source on the explorer |
 
 ## Reproducing
 
