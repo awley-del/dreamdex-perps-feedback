@@ -1,6 +1,6 @@
 # dreamDEX Perps Builder Bounty — reproducible testnet findings
 
-One file per issue in `feedback/` (29 files: 3 major, 26 normal), per the bounty template.
+One file per issue in `feedback/` (39 files: 4 major, 35 normal), per the bounty template.
 
 Security-critical items were sent privately to security@dreamdex.io instead of this repository.
 
@@ -35,3 +35,13 @@ Security-critical items were sent privately to security@dreamdex.io instead of t
 | 28 | feedback/28-bot-kit-shipped-defaults-target-nonexistent-spot-market.md | normal | SDK | Bot kit default USDC.e:USDso not in live spot registry |
 | 29 | feedback/29-ws-two-hosts-two-validators-same-surface.md | normal | API | stg and api.testnet WS hosts answer same malformed frame with different validators |
 | 30 | feedback/30-ws-path-shapes-spec-docs-slash.md | normal | docs | WS feed published as /v0/ws, /v0/ws/public and dead /v0/ws/ (404) |
+| 31 | feedback/31-numeric-input-overflows-500-503-leak-internal-versions.md | major | API | Numeric overflows 500/503 leak viem version, markets-sdk package, RPC method |
+| 32 | feedback/32-no-request-body-size-limit-5mb-echo.md | normal | API | 5MB body accepted, 500 instead of 413, 10MB echo |
+| 33 | feedback/33-known-route-unsupported-method-returns-404-not-405.md | normal | API | Unsupported method on known routes returns 404 bad_request, not 405 |
+| 34 | feedback/34-patch-missing-body-no-content-type-reports-invalid_amount.md | normal | API | PATCH missing body without Content-Type reports invalid_amount, not invalid_request_body |
+| 35 | feedback/35-duplicate-json-keys-accepted-silently.md | normal | API | Duplicate JSON keys accepted last-key-wins and produce calldata |
+| 36 | feedback/36-query-param-validation-lax-limit-hex-unknown-ignored.md | normal | API | limit accepts 0x10/1e3; unknown/negative query params silently ignored |
+| 37 | feedback/37-404-envelope-uses-undocumented-name-and-omits-error-name-header.md | normal | API | Unknown-route 404 uses undocumented bad_request name and omits Error-Name header |
+| 38 | feedback/38-margin-deposit-currency-param-ignored-vs-vault-rejection.md | normal | API | Margin deposit ignores currency while vault rejects same values |
+| 39 | feedback/39-rate-limit-threshold-and-fixed-retry-after.md | normal | API | Rate limit trips only at ~175 RPS; every 429 has Retry-After: 1 |
+| 40 | feedback/40-gzip-request-body-rejected-as-json-not-415.md | normal | API | Gzipped body rejected as invalid JSON instead of 415 |
