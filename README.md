@@ -1,45 +1,37 @@
-# dreamDEX Perps Builder Bounty — Feedback Track Submission
+# dreamDEX Perps Builder Bounty — reproducible testnet findings
 
-Reproducible feedback items found against the dreamDEX Perps testnet surface during the Perps Builder Bounty window (19 Oct - 1 Nov 2026 UTC).
+One file per issue in `feedback/` (29 files: 3 major, 26 normal), per the bounty template.
 
-- Target: `https://api.testnet.dreamdex.io` and the testnet app/docs/WS surface
-- Network: Somnia Tokyo testnet (chainId 50312)
-- Evidence date: 19 October 2026 (each file carries its own exact timestamp)
-- Every item below was reproduced against the live testnet at least twice before being filed, with raw request/response captures kept alongside the write-up
+Security-critical items were sent privately to security@dreamdex.io instead of this repository.
 
-One file per issue, in `feedback/`. Each file follows the bounty template: Short title, Severity, Area, Steps to reproduce, Expected, Actual, Evidence, Environment.
-
-## Index
-
-| File | Severity | Area | Short title |
-|------|----------|------|-------------|
-| `feedback/02-cdn-bucket-listing.md` | normal | app | cdn.dreamdex.io returns full bucket listing (ListBucketResult) |
-| `feedback/03-csp-report-only-leaks-internal-hosts.md` | normal | app | CSP report-only header names internal dev hosts |
-| `feedback/04-unauthenticated-metrics-endpoint.md` | normal | API | `GET /metrics` open: internal route table + traffic stats |
-| `feedback/05-sponsor-warm-unauthenticated-no-ratelimit.md` | normal | API | `POST /api/sponsor/warm` unauthenticated, no rate limit |
-| `feedback/06-ws-subscribe-channels-all-fail.md` | major | API | Every documented WS subscribe channel ends in `subscription_failed` |
-| `feedback/07-rest-over-ws-bearer-ignored.md` | major | API | REST-over-WS `params.bearerToken` ignored - authenticated ops 401 |
-| `feedback/08-subscribed-then-error-double-response.md` | normal | API | Server replies `subscribed` then `subscription_failed` for one frame |
-| `feedback/09-docs-unknown-symbol-400-not-silently-skipped.md` | normal | docs | Docs promise silent skip for unknown symbols, API returns 400 |
-| `feedback/10-docs-comma-symbols-returns-data-not-empty.md` | normal | docs | Docs show comma symbols -> `[]`, API actually parses both |
-| `feedback/11-ws-missing-param-returns-bad-request-envelope-not-invalid-parameters.md` | normal | API | WS missing param returns REST 404 `bad_request`, not `invalid_parameters` |
-| `feedback/12-docs-invalid-interval-error-name-never-returned.md` | normal | docs | Error table documents `invalid_interval`, API returns `invalid_param` |
-| `feedback/13-perps-dev-page-points-to-chain-50383-while-api-runs-50312.md` | major | docs | Perps dev page = chain 50383, API = chain 50312, disjoint on-chain code |
-| `feedback/14-docs-21-perp-markets-perp-naming-vs-api-24-usdso-naming.md` | normal | docs | Docs list 21 `*-PERP` markets, API serves 24 `BASE:USDso`, names 404 |
-| `feedback/15-docs-testnet-base-url-points-to-stg-not-api-testnet.md` | normal | docs | Docs testnet base URL points at stg host; api.testnet undocumented |
-| `feedback/16-nul-byte-path-returns-400-empty-violating-json-error-contract.md` | normal | API | NUL byte in path -> 400 with empty body, no JSON error contract |
-| `feedback/17-login-non-json-content-type-500-leaks-v8-error.md` | normal | API | Login with non-JSON Content-Type -> 500 leaking a V8 exception |
-| `feedback/18-nonexistent-order-prepare-returns-calldata.md` | normal | API | Cancel/reduce prepares return calldata for nonexistent order ids |
-| `feedback/19-leverage-above-doc-max-accepted.md` | normal | API | Leverage above documented per-market maximum accepted, amount minimum enforced |
-| `feedback/20-pools-without-stop-order-registry.md` | normal | contracts | 9 of 24 pools have no stop-order registry while docs advertise TP/SL |
-| `feedback/21-pools-outside-insurance-tier-ladder.md` | normal | contracts | Three pools outside the insurance-fund tier while docs present that stage |
-| `feedback/22-voucher-closed-while-docs-promise-claim.md` | normal | contracts | Voucher campaign over, budget 0, claim() reverts while docs promise a claimable credit |
-| `feedback/23-single-owner-eoa-controls-perps-stack.md` | normal | contracts | One EOA owns every core perps contract and the shared pool beacon |
-| `feedback/24-perps-contracts-source-unverified.md` | normal | contracts | No perps contract has published source on the explorer |
-| `feedback/25-docs-markets-that-do-not-exist.md` | normal | docs | Six documented perps markets do not exist in any registry |
-
-## Reproducing
-
-Every file is self-contained: follow its numbered steps against the live testnet. WS items need any RFC 6455 client (examples use python `websocket-client`); HTTP items are plain `curl`. No credentials are required for any item in this folder.
-
-Per the program rules, anything security-flavored is handled privately with `security@dreamdex.io` and is intentionally not part of this repository.
+| # | File | Severity | Area | Title |
+|---|------|----------|------|-------|
+| 2 | feedback/02-cdn-bucket-listing.md | normal | app | Public storage bucket listing enabled on cdn.dreamdex.io |
+| 3 | feedback/03-csp-report-only-leaks-internal-hosts.md | normal | app | CSP report-only header on app.testnet responses discloses internal dev/staging hosts |
+| 4 | feedback/04-unauthenticated-metrics-endpoint.md | normal | API | Unauthenticated /metrics on api.testnet.dreamdex.io exposes internal route table and traffic stats |
+| 5 | feedback/05-sponsor-warm-unauthenticated-no-ratelimit.md | normal | API | State-changing POST /api/sponsor/warm accepts unauthenticated calls without rate limiting |
+| 6 | feedback/06-ws-subscribe-channels-all-fail.md | major | API | Every documented WebSocket subscribe channel fails with subscription_failed on testnet |
+| 7 | feedback/07-rest-over-ws-bearer-ignored.md | major | API | Authenticated REST-over-WebSocket requests never carry the documented bearerToken — 401 for every valid token |
+| 8 | feedback/08-subscribed-then-error-double-response.md | normal | API | Subscribe replies subscribed and then subscription_failed for the same frame (contradictory protocol responses) |
+| 9 | feedback/09-docs-unknown-symbol-400-not-silently-skipped.md | normal | docs | Market Data docs promise unknown symbols are silently skipped (empty []), live API returns 400 invalid_param |
+| 10 | feedback/10-docs-comma-symbols-returns-data-not-empty.md | normal | docs | Market Data docs show comma-separated symbols returning [], live API parses both symbols (200 with data) |
+| 11 | feedback/11-ws-missing-param-returns-bad-request-envelope-not-invalid-parameters.md | normal | API | WS operations with missing parameters return a REST-style 404 bad_request envelope instead of the documented invalid_parameters protocol error |
+| 12 | feedback/12-docs-invalid-interval-error-name-never-returned.md | normal | docs | Error Handling table documents error name invalid_interval, live API returns invalid_param for the same case |
+| 13 | feedback/13-perps-dev-page-points-to-chain-50383-while-api-runs-50312.md | major | docs | Perps developer page documents chain 50383 (Hideki) contract addresses that have no code on the chain the perps API actually runs (50312) |
+| 14 | feedback/14-docs-21-perp-markets-perp-naming-vs-api-24-usdso-naming.md | normal | docs | Trader docs list 21 markets as BTC-PERP style names; the testnet API serves 24 perps under BASE:USDso and 404s every documented name |
+| 15 | feedback/15-docs-testnet-base-url-points-to-stg-not-api-testnet.md | normal | docs | HTTP API base-URL table sends testnet developers to stg.api.dreamdex.io while the perps testnet host api.testnet.dreamdex.io is undocumented anywhere |
+| 16 | feedback/16-nul-byte-path-returns-400-empty-violating-json-error-contract.md | normal | API | NUL byte in the URL path returns 400 with empty body and no Error-Name header, violating the documented JSON error contract |
+| 17 | feedback/17-login-non-json-content-type-500-leaks-v8-error.md | normal | API | POST /v0/auth/login with a non-JSON Content-Type returns 500 internal_error and leaks a V8 exception string |
+| 18 | feedback/18-nonexistent-order-prepare-returns-calldata.md | normal | API | Cancel/reduce prepares return calldata for nonexistent order ids |
+| 19 | feedback/19-leverage-above-doc-max-accepted.md | normal | API | Leverage above documented per-market maximum accepted, amount minimum enforced |
+| 20 | feedback/20-pools-without-stop-order-registry.md | normal | contracts | 9 of 24 pools have no stop-order registry while docs advertise TP/SL |
+| 21 | feedback/21-pools-outside-insurance-tier-ladder.md | normal | contracts | Three pools outside the insurance-fund tier while docs present that stage |
+| 22 | feedback/22-voucher-closed-while-docs-promise-claim.md | normal | contracts | Voucher campaign over, budget 0, claim() reverts while docs promise a claimable credit |
+| 23 | feedback/23-single-owner-eoa-controls-perps-stack.md | normal | contracts | One EOA owns every core perps contract and the shared pool beacon |
+| 24 | feedback/24-perps-contracts-source-unverified.md | normal | contracts | No perps contract has published source on the explorer |
+| 25 | feedback/25-docs-markets-that-do-not-exist.md | normal | docs | Docs table lists six perps markets that do not exist on the testnet |
+| 26 | feedback/26-app-default-landing-market-404.md | normal | app | App 307s visitors to STT:USDso; API 404 market_not_found |
+| 27 | feedback/27-app-offers-10m-candle-interval-api-rejects.md | normal | app | App offers 10m candles; API/spec enum accepts only 1m|5m|15m|1h|4h|1d |
+| 28 | feedback/28-bot-kit-shipped-defaults-target-nonexistent-spot-market.md | normal | SDK | Bot kit default USDC.e:USDso not in live spot registry |
+| 29 | feedback/29-ws-two-hosts-two-validators-same-surface.md | normal | API | stg and api.testnet WS hosts answer same malformed frame with different validators |
+| 30 | feedback/30-ws-path-shapes-spec-docs-slash.md | normal | docs | WS feed published as /v0/ws, /v0/ws/public and dead /v0/ws/ (404) |
