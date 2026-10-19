@@ -1,0 +1,98 @@
+[
+ {
+  "file": "02-cdn-bucket-listing.md",
+  "severity": "normal",
+  "area": "app",
+  "title": "Public storage bucket listing enabled on cdn.dreamdex.io"
+ },
+ {
+  "file": "03-csp-report-only-leaks-internal-hosts.md",
+  "severity": "normal",
+  "area": "app",
+  "title": "CSP report-only header on app.testnet responses discloses internal dev/staging hosts"
+ },
+ {
+  "file": "04-unauthenticated-metrics-endpoint.md",
+  "severity": "normal",
+  "area": "API",
+  "title": "Unauthenticated /metrics on api.testnet.dreamdex.io exposes internal route table and traffic stats"
+ },
+ {
+  "file": "05-sponsor-warm-unauthenticated-no-ratelimit.md",
+  "severity": "normal",
+  "area": "API",
+  "title": "State-changing POST /api/sponsor/warm accepts unauthenticated calls without rate limiting"
+ },
+ {
+  "file": "06-ws-subscribe-channels-all-fail.md",
+  "severity": "major",
+  "area": "API",
+  "title": "Every documented WebSocket subscribe channel fails with subscription_failed on testnet"
+ },
+ {
+  "file": "07-rest-over-ws-bearer-ignored.md",
+  "severity": "major",
+  "area": "API",
+  "title": "Authenticated REST-over-WebSocket requests never carry the documented bearerToken \u2014 401 for every valid token"
+ },
+ {
+  "file": "08-subscribed-then-error-double-response.md",
+  "severity": "normal",
+  "area": "API",
+  "title": "Subscribe replies subscribed and then subscription_failed for the same frame (contradictory protocol responses)"
+ },
+ {
+  "file": "09-docs-unknown-symbol-400-not-silently-skipped.md",
+  "severity": "normal",
+  "area": "docs",
+  "title": "Market Data docs promise unknown symbols are silently skipped (empty []), live API returns 400 invalid_param"
+ },
+ {
+  "file": "10-docs-comma-symbols-returns-data-not-empty.md",
+  "severity": "normal",
+  "area": "docs",
+  "title": "Market Data docs show comma-separated symbols returning [], live API parses both symbols (200 with data)"
+ },
+ {
+  "file": "11-ws-missing-param-returns-bad-request-envelope-not-invalid-parameters.md",
+  "severity": "normal",
+  "area": "API",
+  "title": "WS operations with missing parameters return a REST-style 404 bad_request envelope instead of the documented invalid_parameters protocol error"
+ },
+ {
+  "file": "12-docs-invalid-interval-error-name-never-returned.md",
+  "severity": "normal",
+  "area": "docs",
+  "title": "Error Handling table documents error name invalid_interval, live API returns invalid_param for the same case"
+ },
+ {
+  "file": "13-perps-dev-page-points-to-chain-50383-while-api-runs-50312.md",
+  "severity": "major",
+  "area": "docs",
+  "title": "Perps developer page documents chain 50383 (Hideki) contract addresses that have no code on the chain the perps API actually runs (50312)"
+ },
+ {
+  "file": "14-docs-21-perp-markets-perp-naming-vs-api-24-usdso-naming.md",
+  "severity": "normal",
+  "area": "docs",
+  "title": "Trader docs list 21 markets as BTC-PERP style names; the testnet API serves 24 perps under BASE:USDso and 404s every documented name"
+ },
+ {
+  "file": "15-docs-testnet-base-url-points-to-stg-not-api-testnet.md",
+  "severity": "normal",
+  "area": "docs",
+  "title": "HTTP API base-URL table sends testnet developers to stg.api.dreamdex.io while the perps testnet host api.testnet.dreamdex.io is undocumented anywhere"
+ },
+ {
+  "file": "16-nul-byte-path-returns-400-empty-violating-json-error-contract.md",
+  "severity": "normal",
+  "area": "API",
+  "title": "NUL byte in the URL path returns 400 with empty body and no Error-Name header, violating the documented JSON error contract"
+ },
+ {
+  "file": "17-login-non-json-content-type-500-leaks-v8-error.md",
+  "severity": "normal",
+  "area": "API",
+  "title": "POST /v0/auth/login with a non-JSON Content-Type returns 500 internal_error and leaks a V8 exception string"
+ }
+]
