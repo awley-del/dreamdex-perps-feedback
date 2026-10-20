@@ -11,9 +11,8 @@ Every chain/API claim below is replayable: the scripts live in `scripts/`, each 
   on Hideki (chain 50383) and compares the docs' open-interest-cap column, and the docs'
   "a tenth of it" per-account rule, against `maxOpenInterest` / `maxPositionSize` read live.
   Run: `cd scripts/perp-oi-cap && npm i && node audit.mjs` (reads only, no wallet, no funds).
-  It makes ~63 sequential RPC calls, so expect roughly two to four minutes; it exits `1` when it
-  finds a mismatch and that exit code **is** the finding, not a crash. Output is printed at the end,
-  so a long silence is expected while it collects.
+  It runs in about 15 seconds (measured), exits `1` when it finds a mismatch, and that exit code
+  **is** the finding, not a crash.
 
 | # | File | Severity | Area | Title |
 | --- | --- | --- | --- | --- |

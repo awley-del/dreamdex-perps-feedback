@@ -53,7 +53,7 @@ The cap the docs publish is the cap the pool enforces, so a builder sizing again
 
 Two consequences that are not cosmetic:
 
-**1. The published cap is already falsified by live trading.** `getOpenInterest()` (one total, not a long/short pair) reads BTC at 285.5048 against a published cap of 246.81545 — **115.7%** — and XRP at 720,724.5 against 344,632 — **209.1%**. Both markets trade past the number the docs publish, while neither is near the real cap (57.8% and 52.3%). So the table is not a stale snapshot of the same quantity; it is a different, smaller number. (These two readings drift with trading; the committed `run.log` shows block 28,586,929 at 2026-10-20T15:36:28Z, and the same two markets sit above their published cap on every run.)
+**1. The published cap is already falsified by live trading.** `getOpenInterest()` (one total, not a long/short pair) reads BTC at 286.09889 against a published cap of 246.81545 — **115.9%** — and XRP at 758,749.8 against 344,632 — **220.2%**. Both markets trade past the number the docs publish, while neither is near the real cap (57.8% and 52.3%). So the table is not a stale snapshot of the same quantity; it is a different, smaller number. (These two readings drift with trading; the committed `run.log` shows block 28,595,939 at 2026-10-20T15:51:30Z, and the same two markets sit above their published cap on every run.)
 
 **2. The "tenth" per-account rule does not hold, and using it as a formula gives the wrong ceiling.** Comparing `docsCap / 10` with the real `maxPositionSize` on every market:
 
@@ -94,7 +94,7 @@ FAIL  OI cap column disagrees with maxOpenInterest on 20 of 21 markets
         LINK 2.0x, NEAR 2.0x, SUI 2.0x, XLM 2.0x, XRP 2.0x, ZEC 10.0x
 
 --- live trading vs the published cap ---
-      markets already past the DOCUMENTED cap: 2 -> BTC 115.7% (live 285.5048), XRP 209.1% (live 720724.5)
+      markets already past the DOCUMENTED cap: 2 -> BTC 115.9% (live 286.09889), XRP 220.2% (live 758749.8)
       markets past the CHAIN cap:              0
 ```
 
@@ -102,7 +102,7 @@ A 2x/4x split that tracks nothing else in the table — the ratio is not leverag
 
 ## Why "the figures can be retuned at any time" does not cover this
 
-The page does say the figures "are read from the live markets and can be retuned at any time", so the obvious response is that the table is merely a stale snapshot. Live trading rules that out: BTC's `getOpenInterest()` is 285.5048 against a published cap of 246.81545. A snapshot can be out of date, but it cannot be a smaller number than the quantity it claims to cap while that quantity is trading *above* it and the pool is not near its limit. The published value is not a past reading of `maxOpenInterest`; it is a different quantity — consistently half or a quarter of it, on 20 of 21 markets, which is what a systematic derivation error looks like and not what drift looks like.
+The page does say the figures "are read from the live markets and can be retuned at any time", so the obvious response is that the table is merely a stale snapshot. Live trading rules that out: BTC's `getOpenInterest()` is 286.09889 against a published cap of 246.81545. A snapshot can be out of date, but it cannot be a smaller number than the quantity it claims to cap while that quantity is trading *above* it and the pool is not near its limit. The published value is not a past reading of `maxOpenInterest`; it is a different quantity — consistently half or a quarter of it, on 20 of 21 markets, which is what a systematic derivation error looks like and not what drift looks like.
 
 Second, staleness still would not explain the prose. "A tenth of it" is stated as a rule, not as a figure, and it is the number builders implement. Comparing `docsCap / 10` with the real `maxPositionSize`: exact on 1 market (WLD), above the real cap on 9, and below it on 11 — 20 of 21 markets disagree, 9 of them in the direction where the documented tenth is larger than the cap the pool enforces.
 

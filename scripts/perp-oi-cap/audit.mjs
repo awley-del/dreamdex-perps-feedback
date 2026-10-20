@@ -176,3 +176,7 @@ console.log(`      markets already past the DOCUMENTED cap: ${pastDocs.length}` 
 console.log(`      markets past the CHAIN cap:              ${pastChain.length}`);
 
 process.exitCode = mismatched.length > 0 ? 1 : 0;
+// the viem transport keeps a handle alive, so node would linger after printing.
+// flush stdout, then exit explicitly with the finding code.
+await new Promise((res) => process.stdout.write("", res));
+process.exit(process.exitCode);
