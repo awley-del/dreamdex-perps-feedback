@@ -1,6 +1,6 @@
 # dreamDEX Perps Builder Bounty — reproducible testnet findings
 
-One file per issue in `feedback/` (39 files: 4 major, 35 normal), per the bounty template.
+One file per issue in `feedback/` (41 files: 4 major, 37 normal), per the bounty template.
 
 Security-critical items were sent privately to security@dreamdex.io instead of this repository.
 
@@ -45,3 +45,5 @@ Security-critical items were sent privately to security@dreamdex.io instead of t
 | 38 | feedback/38-margin-deposit-currency-param-ignored-vs-vault-rejection.md | normal | API | Margin deposit ignores currency while vault rejects same values |
 | 39 | feedback/39-rate-limit-threshold-and-fixed-retry-after.md | normal | API | Rate limit trips only at ~175 RPS; every 429 has Retry-After: 1 |
 | 40 | feedback/40-gzip-request-body-rejected-as-json-not-415.md | normal | API | Gzipped body rejected as invalid JSON instead of 415 |
+| 41 | feedback/41-perp-stop-orders-404-on-all-24-markets-including-13-with-a-registry.md | normal | API | Stop-order endpoints 404 on all 24 perp markets, including the 13 whose row advertises a registry |
+| 42 | feedback/42-dual-listed-symbol-resolves-to-spot-so-perp-side-is-unaddressable.md | normal | API | WBTC/WETH share one symbol across spot and perp; every write resolves to spot, perp side unaddressable |
