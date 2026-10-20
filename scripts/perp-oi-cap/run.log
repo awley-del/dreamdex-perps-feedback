@@ -1,29 +1,31 @@
 pools enumerated from the factory contract: 21
+factory address (read back from MarginBank, not copied from the docs): 0xE631fAEE547baeE07353E290f0562ea67d856560
+MarginBank fullyWired:                       true
 markets matched to an SDK row:               21
-block:                                       28574396  (captured 2026-10-20T15:15:34.417Z)
+block:                                       28586929  (captured 2026-10-20T15:36:28.619Z)
 
 market    dec docs cap      chain cap     chain:docs min ctrl        live OI
 1000PEPE  18  130285600     521142400     4:1        PASS            2290100
-ADA       6   2254678       9018712       4:1        PASS             191013
+ADA       6   2254678       9018712       4:1        PASS             200223
 AVAX      18  66672.2       266688.8      4:1        PASS             9307.4
-BNB       18  693.975       2775.9        4:1        PASS            231.579
-BTC       8   246.81545     493.6309      2:1        PASS          285.59323
-DOGE      8   5613590       22454360      4:1        PASS            1702970
-ETH       18  3995.6125     7991.225      2:1        PASS           771.7016
-HYPE      6   23812.72      47625.44      2:1        PASS           11887.95
-LINK      18  42643.6       170574.4      4:1        PASS             3027.7
-LIT       18  138896.6      555586.4      4:1        PASS             1651.7
-NEAR      24  250410        1001640       4:1        PASS           211425.8
+BNB       18  693.975       2775.9        4:1        PASS            204.532
+BTC       8   246.81545     493.6309      2:1        PASS           285.5048
+DOGE      8   5613590       22454360      4:1        PASS            1598910
+ETH       18  3995.6125     7991.225      2:1        PASS           892.1798
+HYPE      6   23812.72      47625.44      2:1        PASS           15134.32
+LINK      18  42643.6       170574.4      4:1        PASS             3082.2
+LIT       18  138896.6      555586.4      4:1        PASS             2776.1
+NEAR      24  250410        1001640       4:1        PASS           181756.7
 PUMP      6   87993700      351974800     4:1        PASS            4678800
-SOL       9   47654.44      95308.88      2:1        PASS           17025.37
-SUI       9   635009        2540036       4:1        PASS             202213
-TAO       9   2185.491      2185.491      1:1        PASS            139.057
-VVV       18  21786.14      87144.56      4:1        PASS             310.58
-WLD       18  1264000       5056000       4:1        PASS              94042
+SOL       9   47654.44      95308.88      2:1        PASS           15471.58
+SUI       9   635009        2540036       4:1        PASS             177498
+TAO       9   2185.491      2185.491      1:1        PASS             78.889
+VVV       18  21786.14      87144.56      4:1        PASS              159.7
+WLD       18  1264000       5056000       4:1        PASS              94396
 XLM       7   2677780       10711120      4:1        PASS             256654
-XRP       6   344632        1378528       4:1        PASS           707921.9
-ZEC       8   420           1680          4:1        PASS             91.851
-ZRO       18  250599.5      1002398       4:1        PASS             6405.4
+XRP       6   344632        1378528       4:1        PASS           720724.5
+ZEC       8   420           1680          4:1        PASS             44.542
+ZRO       18  250599.5      1002398       4:1        PASS             6408.2
 
 PASS  control: Min size column == getOrderBookParameters().minQuantity on 21/21 markets
 FAIL  OI cap column disagrees with maxOpenInterest on 20 of 21 markets
@@ -36,5 +38,5 @@ FAIL  OI cap column disagrees with maxOpenInterest on 20 of 21 markets
       UNDER the real cap (builder silently under-sizes): 11 -> ADA 2.0x, AVAX 2.0x, BNB 2.0x, BTC 4.1x, DOGE 2.0x, LINK 2.0x, NEAR 2.0x, SUI 2.0x, XLM 2.0x, XRP 2.0x, ZEC 10.0x
 
 --- live trading vs the published cap ---
-      markets already past the DOCUMENTED cap: 2 -> BTC 115.7% (live 285.59323), XRP 205.4% (live 707921.9)
+      markets already past the DOCUMENTED cap: 2 -> BTC 115.7% (live 285.5048), XRP 209.1% (live 720724.5)
       markets past the CHAIN cap:              0

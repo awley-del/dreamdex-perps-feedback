@@ -53,7 +53,7 @@ The cap the docs publish is the cap the pool enforces, so a builder sizing again
 
 Two consequences that are not cosmetic:
 
-**1. The published cap is already falsified by live trading.** `getOpenInterest()` (one total, not a long/short pair) reads BTC at 285.59 against a published cap of 246.81545 — **115.7%** — and XRP at 707,922 against 344,632 — **205.4%**. Both markets trade past the number the docs publish, while neither is near the real cap (57.9% and 51.4%). So the table is not a stale snapshot of the same quantity; it is a different, smaller number. (These two readings drift with trading; the committed `run.log` shows block 28,574,396 at 2026-10-20T15:15:34Z, and the same two markets above the threshold at any hour.)
+**1. The published cap is already falsified by live trading.** `getOpenInterest()` (one total, not a long/short pair) reads BTC at 285.5048 against a published cap of 246.81545 — **115.7%** — and XRP at 720,724.5 against 344,632 — **209.1%**. Both markets trade past the number the docs publish, while neither is near the real cap (57.8% and 52.3%). So the table is not a stale snapshot of the same quantity; it is a different, smaller number. (These two readings drift with trading; the committed `run.log` shows block 28,586,929 at 2026-10-20T15:36:28Z, and the same two markets sit above their published cap on every run.)
 
 **2. The "tenth" per-account rule does not hold, and using it as a formula gives the wrong ceiling.** Comparing `docsCap / 10` with the real `maxPositionSize` on every market:
 
@@ -94,7 +94,7 @@ FAIL  OI cap column disagrees with maxOpenInterest on 20 of 21 markets
         LINK 2.0x, NEAR 2.0x, SUI 2.0x, XLM 2.0x, XRP 2.0x, ZEC 10.0x
 
 --- live trading vs the published cap ---
-      markets already past the DOCUMENTED cap: 2 -> BTC 115.7% (live 285.59323), XRP 205.4% (live 707921.9)
+      markets already past the DOCUMENTED cap: 2 -> BTC 115.7% (live 285.5048), XRP 209.1% (live 720724.5)
       markets past the CHAIN cap:              0
 ```
 
@@ -102,14 +102,15 @@ A 2x/4x split that tracks nothing else in the table — the ratio is not leverag
 
 ## Why "the figures can be retuned at any time" does not cover this
 
-The page does say the figures "are read from the live markets and can be retuned at any time", so the obvious response is that the table is merely a stale snapshot. Live trading rules that out: BTC's `getOpenInterest()` is 285.59 against a published cap of 246.81545. A snapshot can be out of date, but it cannot be a smaller number than the quantity it claims to cap while that quantity is trading *above* it and the pool is not near its limit. The published value is not a past reading of `maxOpenInterest`; it is a different quantity — consistently half or a quarter of it, on 20 of 21 markets, which is what a systematic derivation error looks like and not what drift looks like.
+The page does say the figures "are read from the live markets and can be retuned at any time", so the obvious response is that the table is merely a stale snapshot. Live trading rules that out: BTC's `getOpenInterest()` is 285.5048 against a published cap of 246.81545. A snapshot can be out of date, but it cannot be a smaller number than the quantity it claims to cap while that quantity is trading *above* it and the pool is not near its limit. The published value is not a past reading of `maxOpenInterest`; it is a different quantity — consistently half or a quarter of it, on 20 of 21 markets, which is what a systematic derivation error looks like and not what drift looks like.
 
 Second, staleness still would not explain the prose. "A tenth of it" is stated as a rule, not as a figure, and it is the number builders implement. Comparing `docsCap / 10` with the real `maxPositionSize`: exact on 1 market (WLD), above the real cap on 9, and below it on 11 — 20 of 21 markets disagree, 9 of them in the direction where the documented tenth is larger than the cap the pool enforces.
 
 ## Environment
 
 - Docs: "Perps on Testnet for Traders", Markets table; "Perps on testnet for developers", position-cap prose. Captured 2026-10-20.
-- Chain: Hideki testnet, chainId **50383** (`0xc4cf`), RPC `https://api.hideki2.infra.testnet.somnia.network` — the network both pages name for perps.
-- Contracts: `PerpPoolFactory 0xE631fAEE547baeE07353E290f0562ea67d856560`; per-pool `getPerpPoolParameters()`, `getOrderBookParameters()`, `getOpenInterest()`.
+- Network: **Somnia Tokyo testnet**. Perps run on its **Hideki** chain, which the app shows as the "DreamDEX" region and whose explorer path is `/tokyo` — stated on the perps developer page itself. chainId **50383** (`0xc4cf`), confirmed by `eth_chainId` on the RPC below.
+- RPC `https://api.hideki2.infra.testnet.somnia.network`; indexer `https://hideki-dev.smk.somnia.host/v1/graphql`.
+- Contracts: `PerpPoolFactory 0xE631fAEE547baeE07353E290f0562ea67d856560`, and the script does not take that address on trust — it reads `perpPoolFactory` back from `MarginBank.getSystemConfig()` (`MarginBank` reports `fullyWired: true`), then enumerates pools from that contract. Per-pool: `getPerpPoolParameters()`, `getOrderBookParameters()`, `getOpenInterest()`.
 - SDK: `@somnia-chain/markets-sdk@0.32.1` (the version the developer page says the app runs), `viem@2.57.7`.
 - Wallet: none. Every call is a read; no account and no test funds required.

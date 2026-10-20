@@ -53,7 +53,6 @@ const DOCS_MIN_SIZE = {
 
 const RPC = "https://api.hideki2.infra.testnet.somnia.network";
 const INDEXER = "https://hideki-dev.smk.somnia.host/v1/graphql";
-const FACTORY = "0xE631fAEE547baeE07353E290f0562ea67d856560"; // docs: PerpPoolFactory (Hideki 50383)
 
 const client = createPublicClient({ chain: hidekiTestnet, transport: http(RPC) });
 const markets = new SomniaMarkets({
@@ -89,8 +88,10 @@ function fmt(v, d) {
 const sdkRows = await markets.client.listPerpMarkets();
 const byPool = new Map(sdkRows.map((m) => [m.poolAddress.toLowerCase(), m]));
 
-// independent discovery: the factory contract's own pool list
-const pools = await client.readContract({ address: FACTORY, abi: factoryAbi, functionName: "getPerpPools" });
+// independent discovery: the factory contract's own pool list, and the factory
+// address itself read back from MarginBank rather than trusted from the docs
+const sys = await markets.client.getPerpSystemConfig(SOMNIA_HIDEKI_TESTNET_ADDRESSES.marginBank);
+const pools = await client.readContract({ address: sys.perpPoolFactory, abi: factoryAbi, functionName: "getPerpPools" });
 
 const rows = [];
 for (const pool of pools) {
@@ -134,6 +135,8 @@ const pad = (s, n) => String(s).padEnd(n);
 const pp = (s, n) => String(s).padStart(n);
 
 console.log(`pools enumerated from the factory contract: ${pools.length}`);
+console.log(`factory address (read back from MarginBank, not copied from the docs): ${sys.perpPoolFactory}`);
+console.log(`MarginBank fullyWired:                       ${sys.fullyWired}`);
 console.log(`markets matched to an SDK row:               ${rows.filter((r) => !r.err).length}`);
 console.log(`block:                                       ${await client.getBlockNumber()}  (captured ${new Date().toISOString()})`);
 console.log("");

@@ -29,9 +29,15 @@ GET /v0/definitely-not-a-route
 status 404, body name=bad_request, header error-name=absent
 docs 404 section: market_not_found | order_not_found   (no bad_request)
 ```
+Re-run 2026-10-20 15:45 UTC — the header mechanism itself still works, so this is an omission on one family, not a removed feature:
+```
+GET /v0/definitely-not-a-route    -> 404 {"status":404,"name":"bad_request"}      error-name: ABSENT
+PUT /v0/orders                    -> 404 {"status":404,"name":"bad_request"}      error-name: ABSENT
+GET /v0/markets/NOPE:USDso        -> 404 {"status":404,"name":"market_not_found"} error-name: market_not_found
+```
+So a client that reads `Error-Name` as documented gets an answer for a known-symbol miss and nothing at all for any unknown path.
 
 ## Environment
-Testnet 2026-10-19 (UTC):
-- API: https://api.testnet.dreamdex.io (chain 50312)
+Somnia Tokyo testnet — REST API deployment on chain 50312 (`https://api.testnet.dreamdex.io`). Tested 2026-10-19, re-run 2026-10-20 15:45 UTC.
 - Auth: fresh SIWE bearer minted for this test
 - Re-run: every step is a plain curl
