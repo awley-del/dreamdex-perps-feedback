@@ -1,6 +1,6 @@
 # dreamDEX Perps Builder Bounty — reproducible testnet findings
 
-One file per issue in `feedback/` (44 files: 4 major, 40 normal), per the bounty template.
+One file per issue in `feedback/` (46 files: 4 major, 42 normal), per the bounty template.
 
 Security-critical items were sent privately to security@dreamdex.io instead of this repository.
 
