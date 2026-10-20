@@ -1,6 +1,6 @@
 # dreamDEX Perps Builder Bounty — reproducible testnet findings
 
-One file per issue in `feedback/` (43 files: 4 major, 39 normal), per the bounty template.
+One file per issue in `feedback/` (44 files: 4 major, 40 normal), per the bounty template.
 
 Security-critical items were sent privately to security@dreamdex.io instead of this repository.
 
@@ -49,3 +49,4 @@ Security-critical items were sent privately to security@dreamdex.io instead of t
 | 42 | feedback/42-dual-listed-symbol-resolves-to-spot-so-perp-side-is-unaddressable.md | normal | API | WBTC/WETH share one symbol across spot and perp; every write resolves to spot, perp side unaddressable |
 | 43 | feedback/43-approve-encodes-fee-above-pool-cap-producing-a-transaction-that-always-reverts.md | normal | API | builder/approve encodes any requested fee, including values above the pool cap, yielding a tx that always reverts |
 | 44 | feedback/44-spec-omits-maximum-on-builder-fee-fields-while-the-pool-enforces-one.md | normal | docs | Spec types builder-fee fields as unbounded integers; the per-pool ceiling and its endpoint are missing from the spec |
+| 45 | feedback/45-vault-approve-returns-http-200-with-a-null-body-for-a-supported-currency.md | normal | API | vault/approve answers 200 with literal `null` for currency SOMI, while the same endpoint 400s on an unknown currency and lists SOMI as accepted |
