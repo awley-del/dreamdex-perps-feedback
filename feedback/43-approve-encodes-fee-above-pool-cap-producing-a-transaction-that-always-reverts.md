@@ -1,7 +1,7 @@
 # builder/approve encodes any max fee the caller asks for, including values above the pool cap, producing a transaction the pool always reverts
 
 Severity: normal
-Area: api
+Area: API
 
 ## Steps to reproduce
 1. Read the pool's own ceiling on-chain: `eth_call getMaxBuilderFeeBpsTimes1k()` on `0x440f5a79857cd632ae45439410969c3f4049cc41` (ADA:USDso) -> `10000`.

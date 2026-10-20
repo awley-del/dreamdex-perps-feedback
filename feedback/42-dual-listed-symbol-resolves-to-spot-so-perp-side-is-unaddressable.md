@@ -1,7 +1,7 @@
 # WBTC and WETH are listed as both spot and perp under the identical symbol, and every write resolves to the spot market, leaving the perp side unaddressable
 
 Severity: normal
-Area: api
+Area: API
 
 ## Steps to reproduce
 1. `curl 'https://api.testnet.dreamdex.io/v0/markets?kind=spot'` -> 3 markets, including `WBTC:USDso` and `WETH:USDso`.
