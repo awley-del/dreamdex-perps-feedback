@@ -1,0 +1,40 @@
+pools enumerated from the factory contract: 21
+markets matched to an SDK row:               21
+block:                                       28574396  (captured 2026-10-20T15:15:34.417Z)
+
+market    dec docs cap      chain cap     chain:docs min ctrl        live OI
+1000PEPE  18  130285600     521142400     4:1        PASS            2290100
+ADA       6   2254678       9018712       4:1        PASS             191013
+AVAX      18  66672.2       266688.8      4:1        PASS             9307.4
+BNB       18  693.975       2775.9        4:1        PASS            231.579
+BTC       8   246.81545     493.6309      2:1        PASS          285.59323
+DOGE      8   5613590       22454360      4:1        PASS            1702970
+ETH       18  3995.6125     7991.225      2:1        PASS           771.7016
+HYPE      6   23812.72      47625.44      2:1        PASS           11887.95
+LINK      18  42643.6       170574.4      4:1        PASS             3027.7
+LIT       18  138896.6      555586.4      4:1        PASS             1651.7
+NEAR      24  250410        1001640       4:1        PASS           211425.8
+PUMP      6   87993700      351974800     4:1        PASS            4678800
+SOL       9   47654.44      95308.88      2:1        PASS           17025.37
+SUI       9   635009        2540036       4:1        PASS             202213
+TAO       9   2185.491      2185.491      1:1        PASS            139.057
+VVV       18  21786.14      87144.56      4:1        PASS             310.58
+WLD       18  1264000       5056000       4:1        PASS              94042
+XLM       7   2677780       10711120      4:1        PASS             256654
+XRP       6   344632        1378528       4:1        PASS           707921.9
+ZEC       8   420           1680          4:1        PASS             91.851
+ZRO       18  250599.5      1002398       4:1        PASS             6405.4
+
+PASS  control: Min size column == getOrderBookParameters().minQuantity on 21/21 markets
+FAIL  OI cap column disagrees with maxOpenInterest on 20 of 21 markets
+      ratio groups (chain : docs): {"4:1":["1000PEPE","ADA","AVAX","BNB","DOGE","LINK","LIT","NEAR","PUMP","SUI","VVV","WLD","XLM","XRP","ZEC","ZRO"],"2:1":["BTC","ETH","HYPE","SOL"],"1:1":["TAO"]}
+
+--- docs prose: "A single account is capped at a tenth of it on most markets" ---
+      comparing docsCap/10 with the real maxPositionSize()
+      EQUAL to the real cap: 1/21 -> WLD
+      OVER the documented rule (docsCap/10 > maxPositionSize; the docs say such an order reverts MaxPositionSizeExceeded 0x714b36d6): 9 -> 1000PEPE 13028560 vs 13028500 (+0.0004%), ETH 399.56125 vs 399.5612 (+0.0000%), HYPE 2381.272 vs 2381.27 (+0.0000%), LIT 13889.66 vs 13889.6 (+0.0004%), PUMP 8799370 vs 8799300 (+0.0007%), SOL 4765.444 vs 4765.44 (+0.0000%), TAO 218.5491 vs 218.549 (+0.0000%), VVV 2178.614 vs 2178.61 (+0.0001%), ZRO 25059.95 vs 25059.9 (+0.0001%)
+      UNDER the real cap (builder silently under-sizes): 11 -> ADA 2.0x, AVAX 2.0x, BNB 2.0x, BTC 4.1x, DOGE 2.0x, LINK 2.0x, NEAR 2.0x, SUI 2.0x, XLM 2.0x, XRP 2.0x, ZEC 10.0x
+
+--- live trading vs the published cap ---
+      markets already past the DOCUMENTED cap: 2 -> BTC 115.7% (live 285.59323), XRP 205.4% (live 707921.9)
+      markets past the CHAIN cap:              0

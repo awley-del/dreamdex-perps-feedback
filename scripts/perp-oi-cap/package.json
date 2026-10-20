@@ -1,0 +1,13 @@
+{
+  "name": "dreamdex-perp-oi-cap-repro",
+  "private": true,
+  "type": "module",
+  "description": "Repro for feedback/48: trader docs open-interest cap vs on-chain maxOpenInterest on Hideki (50383)",
+  "scripts": {
+    "start": "node audit.mjs"
+  },
+  "dependencies": {
+    "@somnia-chain/markets-sdk": "0.32.1",
+    "viem": "^2.57.7"
+  }
+}

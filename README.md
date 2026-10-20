@@ -4,7 +4,13 @@ One file per issue in `feedback/` (43 files: 4 major, 39 normal), per the bounty
 
 Security-critical items were sent privately to security@dreamdex.io instead of this repository.
 
-Every file below is backed by a script in `~/hunts/dreamdex/evidence/` that replays the case against the live testnet.
+Every chain/API claim below is replayable: the scripts live in `scripts/`, each with its own
+`package.json` and a captured `run.log` from the run that the item's numbers come from.
+
+- `scripts/perp-oi-cap/` — item 48. Enumerates the 21 perp pools from `PerpPoolFactory.getPerpPools()`
+  on Hideki (chain 50383) and compares the docs' open-interest-cap column, and the docs'
+  "a tenth of it" per-account rule, against `maxOpenInterest` / `maxPositionSize` read live.
+  Run: `cd scripts/perp-oi-cap && npm i && node audit.mjs` (reads only, no wallet, no funds).
 
 | # | File | Severity | Area | Title |
 |---|------|----------|------|-------|
@@ -16,9 +22,9 @@ Every file below is backed by a script in `~/hunts/dreamdex/evidence/` that repl
 | 10 | feedback/10-docs-comma-symbols-returns-data-not-empty.md | normal | docs | Market Data docs show comma-separated symbols returning [], live API parses both symbols (200 with data) |
 | 11 | feedback/11-ws-missing-param-returns-bad-request-envelope-not-invalid-parameters.md | normal | API | WS operations with missing parameters return a REST-style 404 bad_request envelope instead of the documented invalid_parameters protocol error |
 | 12 | feedback/12-docs-invalid-interval-error-name-never-returned.md | normal | docs | Error Handling table documents error name invalid_interval, live API returns invalid_param for the same case |
-| 13 | feedback/13-perps-dev-page-points-to-chain-50383-while-api-runs-50312.md | major | docs | Perps developer page documents chain 50383 (Hideki) contract addresses that have no code on the chain the perps API actually runs (50312) |
-| 14 | feedback/14-docs-21-perp-markets-perp-naming-vs-api-24-usdso-naming.md | normal | docs | Trader docs list 21 markets as BTC-PERP style names; the testnet API serves 24 perps under BASE:USDso and 404s every documented name |
-| 15 | feedback/15-docs-testnet-base-url-points-to-stg-not-api-testnet.md | normal | docs | HTTP API base-URL table sends testnet developers to stg.api.dreamdex.io while the perps testnet host api.testnet.dreamdex.io is undocumented anywhere |
+| 13 | feedback/13-perps-dev-page-points-to-chain-50383-while-api-runs-50312.md | normal | docs | Perps developer page documents chain 50383 while the HTTP API and the Contract Addresses page describe a different deployment on 50312, and neither page reconciles the two |
+| 14 | feedback/14-docs-21-perp-markets-perp-naming-vs-api-24-usdso-naming.md | normal | docs | Trader docs list 21 markets as BTC-PERP style names; the REST registry serves BASE:USDso and 404s every -PERP name, including markets whose base ticker it does carry |
+| 15 | feedback/15-docs-testnet-base-url-points-to-stg-not-api-testnet.md | normal | docs | HTTP API base-URL table sends testnet developers to stg.api.dreamdex.io; the perps API host api.testnet.dreamdex.io is undocumented anywhere |
 | 16 | feedback/16-nul-byte-path-returns-400-empty-violating-json-error-contract.md | normal | API | NUL byte in the URL path returns 400 with empty body and no Error-Name header, violating the documented JSON error contract |
 | 17 | feedback/17-login-non-json-content-type-500-leaks-v8-error.md | normal | API | POST /v0/auth/login with a non-JSON Content-Type returns 500 internal_error and leaks a V8 exception string |
 | 18 | feedback/18-nonexistent-order-prepare-returns-calldata.md | normal | API | Cancel and reduce prepares return calldata for an order id that does not exist |
@@ -28,7 +34,6 @@ Every file below is backed by a script in `~/hunts/dreamdex/evidence/` that repl
 | 22 | feedback/22-voucher-closed-while-docs-promise-claim.md | normal | contracts | Voucher distributor campaign is over with zero budget and claim() reverts while the docs still promise any address can claim 1,000 USDso |
 | 23 | feedback/23-single-owner-eoa-controls-perps-stack.md | normal | contracts | One EOA owns every core perps contract and the shared pool beacon |
 | 24 | feedback/24-perps-contracts-source-unverified.md | normal | contracts | No perps contract has published source on the explorer |
-| 25 | feedback/25-docs-markets-that-do-not-exist.md | normal | docs | Trader docs table lists six perps markets that do not exist anywhere on the testnet |
 | 26 | feedback/26-app-default-landing-market-404.md | normal | app | App redirects every visitor to a default market that does not exist in the API registry |
 | 27 | feedback/27-app-offers-10m-candle-interval-api-rejects.md | normal | app | App ships a 10m candle interval option that the candles endpoint and its own OpenAPI spec reject |
 | 28 | feedback/28-bot-kit-shipped-defaults-target-nonexistent-spot-market.md | normal | SDK | Bot kit ships with a default spot symbol that does not exist on the testnet it targets |
@@ -51,3 +56,4 @@ Every file below is backed by a script in `~/hunts/dreamdex/evidence/` that repl
 | 45 | feedback/45-vault-approve-returns-http-200-with-a-null-body-for-a-supported-currency.md | normal | API | vault/approve answers HTTP 200 with a literal null body for a currency the same endpoint lists as accepted |
 | 46 | feedback/46-spec-production-ws-pathname-404s-only-testnet-accepts-it.md | major | API | The spec's declared production WebSocket pathname 404s on production and staging while testnet accepts it, so spec-generated clients connect only on testnet |
 | 47 | feedback/47-testnet-spec-nine-channels-production-recognises-five.md | major | docs | The testnet spec advertises nine subscribe channels and production recognises five, so four documented channels answer unknown_channel on mainnet |
+| 48 | feedback/48-docs-open-interest-cap-is-2x-or-4x-the-on-chain-cap.md | major | docs | Trader docs open-interest cap is 2x or 4x the on-chain cap on 20 of 21 markets |
