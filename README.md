@@ -1,6 +1,6 @@
 # dreamDEX Perps Builder Bounty — reproducible testnet findings
 
-One file per issue in `feedback/` (41 files: 4 major, 37 normal), per the bounty template.
+One file per issue in `feedback/` (43 files: 4 major, 39 normal), per the bounty template.
 
 Security-critical items were sent privately to security@dreamdex.io instead of this repository.
 
@@ -47,3 +47,5 @@ Security-critical items were sent privately to security@dreamdex.io instead of t
 | 40 | feedback/40-gzip-request-body-rejected-as-json-not-415.md | normal | API | Gzipped body rejected as invalid JSON instead of 415 |
 | 41 | feedback/41-perp-stop-orders-404-on-all-24-markets-including-13-with-a-registry.md | normal | API | Stop-order endpoints 404 on all 24 perp markets, including the 13 whose row advertises a registry |
 | 42 | feedback/42-dual-listed-symbol-resolves-to-spot-so-perp-side-is-unaddressable.md | normal | API | WBTC/WETH share one symbol across spot and perp; every write resolves to spot, perp side unaddressable |
+| 43 | feedback/43-approve-encodes-fee-above-pool-cap-producing-a-transaction-that-always-reverts.md | normal | API | builder/approve encodes any requested fee, including values above the pool cap, yielding a tx that always reverts |
+| 44 | feedback/44-spec-omits-maximum-on-builder-fee-fields-while-the-pool-enforces-one.md | normal | docs | Spec types builder-fee fields as unbounded integers; the per-pool ceiling and its endpoint are missing from the spec |
