@@ -1,6 +1,6 @@
 # dreamDEX Perps Builder Bounty — reproducible testnet findings
 
-One file per issue in `feedback/` (41 files: 2 major, 39 normal), per the bounty template.
+One file per issue in `feedback/` (43 files: 4 major, 39 normal), per the bounty template.
 
 Security-critical items were sent privately to security@dreamdex.io instead of this repository.
 
@@ -49,3 +49,5 @@ Every file below is backed by a script in `~/hunts/dreamdex/evidence/` that repl
 | 43 | feedback/43-approve-encodes-fee-above-pool-cap-producing-a-transaction-that-always-reverts.md | normal | API | builder/approve encodes any max fee the caller asks for, including values above the pool cap, producing a transaction the pool always reverts |
 | 44 | feedback/44-spec-omits-maximum-on-builder-fee-fields-while-the-pool-enforces-one.md | normal | docs | The spec declares the builder-fee ceilings as unbounded integers while every pool enforces a finite on-chain cap |
 | 45 | feedback/45-vault-approve-returns-http-200-with-a-null-body-for-a-supported-currency.md | normal | API | vault/approve answers HTTP 200 with a literal null body for a currency the same endpoint lists as accepted |
+| 46 | feedback/46-spec-production-ws-pathname-404s-only-testnet-accepts-it.md | major | API | The spec's declared production WebSocket pathname 404s on production and staging while testnet accepts it, so spec-generated clients connect only on testnet |
+| 47 | feedback/47-testnet-spec-nine-channels-production-recognises-five.md | major | docs | The testnet spec advertises nine subscribe channels and production recognises five, so four documented channels answer unknown_channel on mainnet |
