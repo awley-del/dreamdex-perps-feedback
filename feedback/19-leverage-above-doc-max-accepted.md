@@ -31,7 +31,7 @@ Honest scope note: this is a server-side validation gap observed in the prepare 
 Reproduced twice (two runs per value) on 19 October 2026, two independent sessions.
 
 ## Environment
+
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
-- API: https://api.testnet.dreamdex.io (v0), 19 October 2026
-- Network: Somnia Tokyo testnet, chainId 50312
-- Auth: bearer from SIWE login, own fresh testnet wallet
+- Network: API: https://api.testnet.dreamdex.io (v0), 19 October 2026 Network: Somnia Tokyo testnet, chainId 50312 Auth: bearer from SIWE login, own fresh testnet wallet
+- Wallet: n/a — request signed none; prepare returned calldata, nothing broadcast

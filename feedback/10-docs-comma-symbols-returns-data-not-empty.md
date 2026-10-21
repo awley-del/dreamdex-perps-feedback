@@ -16,4 +16,7 @@ HTTP 200 `{"orderbooks":[{"symbol":"WBTC:USDso",...},{"symbol":"WETH:USDso",...}
 evidence/reval-20261019/docs/ob_comma.body (200, both books) + fresh re-run 10:31 UTC returning `orderbooks` length 2; stg comparison evidence/reval-20261019/docs/stg_ob_comma.body (400); docs capture evidence/reval-20261019/docs/developers_http-api_market-data.txt.
 
 ## Environment
-SDK: curl 8.5.0 / python requests. Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0`. Wallet: n/a (unauthenticated GET). Evidence date: 2026-10-19 10:30-10:50 UTC.
+- SDK: curl 8.5.0 / python requests.
+- Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0`.
+- Wallet: n/a (unauthenticated GET).
+- Evidence date: 2026-10-19 10:30-10:50 UTC.

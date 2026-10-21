@@ -1,23 +1,44 @@
-# dreamDEX Perps — feedback
+# dreamDEX Perps — builder feedback
 
-Independent build feedback for the dreamDEX Perps Builder program. **48 items**, one Markdown file per item in `feedback/`, in the submission format:
+48 independently reproducible items (0 critical, 5 major, 43 normal) against the dreamDEX perpetuals stack on Somnia Tokyo testnet.
 
-```
-# Short title
-Severity: critical | major | normal
-Area: API | SDK | docs | app | contracts
+Each item lives in its own Markdown file under `feedback/`, following the format the program asks for: a short title, `Severity`, `Area`, then steps to reproduce, expected, actual, evidence and environment.
 
-## Steps to reproduce
-## Expected
-## Actual
-## Evidence
-## Environment
-```
+| Severity | Count |
+|---|---|
+| critical | 0 |
+| major | 5 |
+| normal | 43 |
 
-## Contents
+| Area | Count |
+|---|---|
+| API | 23 |
+| SDK | 5 |
+| docs | 11 |
+| app | 4 |
+| contracts | 5 |
+
+## How to read an item
+
+Every file is self-contained. `## Steps to reproduce` is a sequence that a reviewer can replay without prior context: `curl` against `https://api.testnet.dreamdex.io/v0`, a JSON-RPC call against chain 50312, or `npx tsx` against the published bot kit. `## Evidence` carries the raw request and response, the transaction hash, or the file and line where the behaviour comes from.
+
+## Reproducible harnesses
+
+Two items ship the harness that produces their output, so the numbers can be regenerated rather than trusted:
+
+- `scripts/dry-run-parsers/` — item 49. `cd scripts/dry-run-parsers && npx tsx repro.ts` runs the four `DRY_RUN` parsers against one value matrix. Point `BOTKIT_DIR` at a clone of the bot kit to import the real loaders; without it the script replays the same comparison expressions and prints an identical table.
+- `scripts/perp-oi-cap/` — item 48. `npm i && node audit.mjs` reads every perp pool's on-chain cap and compares it with the number the trader docs publish, exit code 1 on a mismatch. `run.log` holds the committed run.
+
+`scripts/build-report.py` regenerates `REPORT.pdf` from `_index.json`, so the cover can never drift from the directory.
+
+## Scope
+
+Feedback only, covering API, SDK, docs, app and contracts. Nothing here is a security vulnerability: those were disclosed privately to the address the program designates, as its rules require. No item claims impact beyond what its own evidence shows.
+
+## Items
 
 | # | Item | Severity | Area |
-|---|------|----------|------|
+|---|---|---|---|
 | 02 | Public storage bucket listing enabled on cdn.dreamdex.io | normal | app |
 | 03 | CSP report-only header on app.testnet responses discloses internal dev/staging hosts | normal | app |
 | 04 | Unauthenticated /metrics on api.testnet.dreamdex.io exposes internal route table and traffic stats | normal | API |
@@ -66,26 +87,3 @@ Area: API | SDK | docs | app | contracts
 | 51 | perp-maker's link gate answers `ok: true` when there is no trading key, so it can never fail and the live bot runs on without warning | normal | SDK |
 | 52 | The margin status reader falls back to "Healthy" for any value outside 0-3, so an unreadable status is reported as the safest one | normal | SDK |
 | 53 | CHAIN_ID is a free-form override with no range check and no cross-check against the RPC, so a typo signs against one chain while reading another | normal | SDK |
-
-## Totals
-
-- **5 major**, **43 normal**, 0 critical
-- Area: 23 API · 11 docs · 5 contracts · 5 SDK · 4 app
-
-## What is in here, and what is not
-
-Every item is reproducible from the evidence it carries: a captured request and response, a runtime log, a chain read, or a cited source line. Items whose claim did not survive re-reading the source were dropped rather than softened — an earlier draft of three of these was written against a paraphrase of the code and was rewritten against the shipped lines before publication.
-
-Items that require funds, a live session, or a wallet signature that could not be exercised in this environment are **not** in this repository. Those are listed in the private report, with the exact check that remains.
-
-Security vulnerabilities are not in this repository. They were sent privately to `security@dreamdex.io` per the program rules.
-
-## Reproducing the bot-kit parsers
-
-`scripts/dry-run-parsers/repro.ts` evaluates the four `DRY_RUN` parsers against the same environment values. Run it against a clone of the bot-kit so the `perp-core` column is imported rather than replayed:
-
-```
-BOTKIT_DIR=/path/to/dreamdex-bot-kit npx tsx scripts/dry-run-parsers/repro.ts
-```
-
-Without `BOTKIT_DIR` it replays all four comparisons verbatim and says so in its first output line. Captured output is in `scripts/dry-run-parsers/run.log`.

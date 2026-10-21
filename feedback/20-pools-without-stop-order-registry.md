@@ -23,6 +23,5 @@ For the nine markets above the perps TP/SL plane has no contract to call. The or
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026 Contracts: PerpPoolFactory 0x516d2cb6de41bE98444e887793946E65989Ba07b (owner of the registry wiring)
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-- Chain: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026
-- Contracts: PerpPoolFactory 0x516d2cb6de41bE98444e887793946E65989Ba07b (owner of the registry wiring)

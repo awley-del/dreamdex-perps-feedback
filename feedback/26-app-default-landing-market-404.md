@@ -34,9 +34,8 @@ Note: `/v0/markets?kind=event` and the `kind` enum (`spot|perp|event|all`) were 
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, 2026-10-19 (UTC): API: https://api.testnet.dreamdex.io
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-Testnet 2026-10-19 (UTC):
 - App: https://app.testnet.dreamdex.io
-- API: https://api.testnet.dreamdex.io
 - WebSocket: wss://api.testnet.dreamdex.io/v0/ws/public
 - Bot kit: github.com/somnia-chain/dreamdex-bot-kit (cloned for this report)

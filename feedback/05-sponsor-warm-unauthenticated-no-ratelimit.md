@@ -16,5 +16,7 @@ Every call returns `204` empty body with no auth challenge; 10 sequential calls 
 Burst: evidence/reval-20261019/probe_summary.json -> F10_burst10; single call: F10_warm_POST
 
 ## Environment
-Network: Somnia Tokyo testnet (app.testnet.dreamdex.io, Vercel). SDK: n/a. Wallet: n/a (unauthenticated).
-Evidence date: 2026-10-19 09:47-09:52 UTC
+- SDK: n/a.
+- Network: Somnia Tokyo testnet (app.testnet.dreamdex.io, Vercel).
+- Wallet: n/a (unauthenticated).
+- Evidence date: 2026-10-19 09:47-09:52 UTC

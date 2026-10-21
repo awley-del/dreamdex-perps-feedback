@@ -27,5 +27,6 @@ A client generated from this spec will type the field as a non-negative integer,
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, chainId 50312.
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-Spec: `https://api.testnet.dreamdex.io/.well-known/openapi.json`, fetched 2026-10-20. Chain: Somnia Tokyo testnet, chainId 50312.
+- Spec: `https://api.testnet.dreamdex.io/.well-known/openapi.json`, fetched 2026-10-20.

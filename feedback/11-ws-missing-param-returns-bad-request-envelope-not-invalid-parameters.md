@@ -18,4 +18,7 @@ A protocol error frame `{"type":"error","errorName":"invalid_parameters","messag
 evidence/reval-20261019/docs/C_missing_param_repro.json (two fresh runs, 10:44 UTC), original probe evidence/reval-20261019/docs/ws_probe.out (MISSING_PARAM line), docs capture evidence/reval-20261019/docs/developers_websocket-api_errors.txt.
 
 ## Environment
-SDK: python websocket-client 1.9.0. Network: Somnia Tokyo testnet, `wss://api.testnet.dreamdex.io/v0/ws/public`. Wallet: n/a (no auth required for this operation). Evidence date: 2026-10-19 10:30-10:50 UTC.
+- SDK: python websocket-client 1.9.0.
+- Network: Somnia Tokyo testnet, `wss://api.testnet.dreamdex.io/v0/ws/public`.
+- Wallet: n/a (no auth required for this operation).
+- Evidence date: 2026-10-19 10:30-10:50 UTC.

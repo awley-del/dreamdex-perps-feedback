@@ -16,4 +16,7 @@ HTTP 400 with `"name":"invalid_param"` and a zod detail payload: `{"status":400,
 evidence/reval-20261019/docs/p_candles_bad_interval.body + .hdr, fresh re-run 10:31 UTC (identical), docs capture evidence/reval-20261019/docs/developers_http-api_error-handling.txt (table with invalid_interval).
 
 ## Environment
-SDK: curl 8.5.0. Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0`. Wallet: n/a (unauthenticated GET). Evidence date: 2026-10-19 10:30-10:50 UTC.
+- SDK: curl 8.5.0.
+- Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0`.
+- Wallet: n/a (unauthenticated GET).
+- Evidence date: 2026-10-19 10:30-10:50 UTC.

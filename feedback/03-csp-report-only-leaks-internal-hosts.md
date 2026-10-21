@@ -16,5 +16,7 @@ The report-only policy lists internal hosts: `https://dev.smk.somnia.host`, `htt
 Full response headers: evidence/reval-20261019/probe_summary.json -> F10_warm_POST.headers
 
 ## Environment
-Network: Somnia Tokyo testnet (app.testnet.dreamdex.io, Vercel). SDK: n/a. Wallet: n/a.
-Evidence date: 2026-10-19 09:47-09:52 UTC
+- SDK: n/a.
+- Network: Somnia Tokyo testnet (app.testnet.dreamdex.io, Vercel).
+- Wallet: n/a.
+- Evidence date: 2026-10-19 09:47-09:52 UTC

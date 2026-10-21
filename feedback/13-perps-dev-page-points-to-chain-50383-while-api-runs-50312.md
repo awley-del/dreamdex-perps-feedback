@@ -60,5 +60,6 @@ The Contract Addresses page's spot `$USDso 0x9c32F382…` has 0 bytes of code on
 Docs captures: perps developer page (50383 block) and Contract Addresses page ("Testnet (Somnia Shannon, chain ID 50312)", spot-only).
 
 ## Environment
-
-Docs + JSON-RPC only, no SDK and no wallet. Networks: Hideki 50383 vs Shannon 50312. All calls are reads.
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet — Hideki 50383 (perps contracts) vs Shannon 50312 (API and app). Read-only JSON-RPC and docs, no writes.
+- Wallet: n/a — no wallet, no signature, no transaction broadcast

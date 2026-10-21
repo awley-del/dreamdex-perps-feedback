@@ -39,8 +39,7 @@ GET /v0/markets/WBTC:USDso       -> 200
 - Registry set (24): ADA, AVAX, BNB, DOGE, HYPE, LINK, NEAR, SOL, SUI, SWBTCA, SWBTCB, SWBTCC, SWBTCD, SWBNB, SWBTC, SWDOGE, SWETH, SWSOL, TAO, WBTC, WETH, WLD, XLM, XRP.
 
 ## Environment
-
-- Docs: perps trader page + perps developer page (both name Hideki 50383 for perps).
-- Chain: Hideki 50383, RPC `https://api.hideki2.infra.testnet.somnia.network`, factory `0xE631fAEE547baeE07353E290f0562ea67d856560`.
+- SDK: `@somnia-chain/markets-sdk@0.32.1`.
+- Network: Docs: perps trader page + perps developer page (both name Hideki 50383 for perps). Chain: Hideki 50383, RPC `https://api.hideki2.infra.testnet.somnia.network`, factory `0xE631fAEE547baeE07353E290f0562ea67d856560`.
+- Wallet: none, all reads.
 - REST: `https://api.testnet.dreamdex.io/v0` (rows report chainId 50312).
-- SDK: `@somnia-chain/markets-sdk@0.32.1`. Wallet: none, all reads.

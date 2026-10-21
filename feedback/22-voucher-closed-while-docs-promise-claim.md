@@ -26,6 +26,5 @@ Fresh eth_call results, 19 October 2026 (repeated in two independent passes):
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026 Contracts: VoucherDistributor 0x776f83bb37CF570e5d19BB7De76511a191fa24FE, USDso 0x9c32F3827A1a99f0cf9B213de8b53eC3d57bb171
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-- Chain: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026
-- Contracts: VoucherDistributor 0x776f83bb37CF570e5d19BB7De76511a191fa24FE, USDso 0x9c32F3827A1a99f0cf9B213de8b53eC3d57bb171

@@ -32,8 +32,6 @@ live:  limit=0x10 / 1e3 / +1 / offset=-1 / page=-1 / limit[]=1  -> 200
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, 2026-10-19 (UTC): API: https://api.testnet.dreamdex.io (chain 50312) Auth: fresh SIWE bearer minted for this test
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-Testnet 2026-10-19 (UTC):
-- API: https://api.testnet.dreamdex.io (chain 50312)
-- Auth: fresh SIWE bearer minted for this test
 - Re-run: every step is a plain curl

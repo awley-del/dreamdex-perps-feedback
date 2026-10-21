@@ -25,6 +25,6 @@ Fresh explorer API probes, 19 October 2026 (two independent passes, identical ou
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, chainId 50312, 19 October 2026
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
 - Explorer API: https://shannon-explorer.somnia.network/api/v2/smart-contracts/{address}
-- Chain: Somnia Tokyo testnet, chainId 50312, 19 October 2026

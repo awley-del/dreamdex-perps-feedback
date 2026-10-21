@@ -2,337 +2,337 @@
   {
     "id": "02",
     "file": "02-cdn-bucket-listing.md",
+    "title": "Public storage bucket listing enabled on cdn.dreamdex.io",
     "severity": "normal",
-    "area": "app",
-    "title": "Public storage bucket listing enabled on cdn.dreamdex.io"
+    "area": "app"
   },
   {
     "id": "03",
     "file": "03-csp-report-only-leaks-internal-hosts.md",
+    "title": "CSP report-only header on app.testnet responses discloses internal dev/staging hosts",
     "severity": "normal",
-    "area": "app",
-    "title": "CSP report-only header on app.testnet responses discloses internal dev/staging hosts"
+    "area": "app"
   },
   {
     "id": "04",
     "file": "04-unauthenticated-metrics-endpoint.md",
+    "title": "Unauthenticated /metrics on api.testnet.dreamdex.io exposes internal route table and traffic stats",
     "severity": "normal",
-    "area": "API",
-    "title": "Unauthenticated /metrics on api.testnet.dreamdex.io exposes internal route table and traffic stats"
+    "area": "API"
   },
   {
     "id": "05",
     "file": "05-sponsor-warm-unauthenticated-no-ratelimit.md",
+    "title": "State-changing POST /api/sponsor/warm accepts unauthenticated calls without rate limiting",
     "severity": "normal",
-    "area": "API",
-    "title": "State-changing POST /api/sponsor/warm accepts unauthenticated calls without rate limiting"
+    "area": "API"
   },
   {
     "id": "09",
     "file": "09-docs-unknown-symbol-400-not-silently-skipped.md",
+    "title": "Market Data docs promise unknown symbols are silently skipped (empty []), live API returns 400 invalid_param",
     "severity": "normal",
-    "area": "docs",
-    "title": "Market Data docs promise unknown symbols are silently skipped (empty []), live API returns 400 invalid_param"
+    "area": "docs"
   },
   {
     "id": "10",
     "file": "10-docs-comma-symbols-returns-data-not-empty.md",
+    "title": "Market Data docs show comma-separated symbols returning [], live API parses both symbols (200 with data)",
     "severity": "normal",
-    "area": "docs",
-    "title": "Market Data docs show comma-separated symbols returning [], live API parses both symbols (200 with data)"
+    "area": "docs"
   },
   {
     "id": "11",
     "file": "11-ws-missing-param-returns-bad-request-envelope-not-invalid-parameters.md",
+    "title": "WS operations with missing parameters return a REST-style 404 bad_request envelope instead of the documented invalid_parameters protocol error",
     "severity": "normal",
-    "area": "API",
-    "title": "WS operations with missing parameters return a REST-style 404 bad_request envelope instead of the documented invalid_parameters protocol error"
+    "area": "API"
   },
   {
     "id": "12",
     "file": "12-docs-invalid-interval-error-name-never-returned.md",
+    "title": "Error Handling table documents error name invalid_interval, live API returns invalid_param for the same case",
     "severity": "normal",
-    "area": "docs",
-    "title": "Error Handling table documents error name invalid_interval, live API returns invalid_param for the same case"
+    "area": "docs"
   },
   {
     "id": "13",
     "file": "13-perps-dev-page-points-to-chain-50383-while-api-runs-50312.md",
+    "title": "Perps developer page documents chain 50383 while the HTTP API and Contract Addresses page describe a different deployment on 50312; two of the six documented addresses resolve to a different contract there",
     "severity": "normal",
-    "area": "docs",
-    "title": "Perps developer page documents chain 50383 while the HTTP API and Contract Addresses page describe a different deployment on 50312; two of the six documented addresses resolve to a different contract there"
+    "area": "docs"
   },
   {
     "id": "14",
     "file": "14-docs-21-perp-markets-perp-naming-vs-api-24-usdso-naming.md",
+    "title": "Trader docs list 21 markets as BTC-PERP style names; the REST registry serves BASE:USDso and 404s every -PERP name, including markets whose base ticker it does carry",
     "severity": "normal",
-    "area": "docs",
-    "title": "Trader docs list 21 markets as BTC-PERP style names; the REST registry serves BASE:USDso and 404s every -PERP name, including markets whose base ticker it does carry"
+    "area": "docs"
   },
   {
     "id": "15",
     "file": "15-docs-testnet-base-url-points-to-stg-not-api-testnet.md",
+    "title": "HTTP API base-URL table sends testnet developers to stg.api.dreamdex.io; the perps API host api.testnet.dreamdex.io is undocumented anywhere",
     "severity": "normal",
-    "area": "docs",
-    "title": "HTTP API base-URL table sends testnet developers to stg.api.dreamdex.io; the perps API host api.testnet.dreamdex.io is undocumented anywhere"
+    "area": "docs"
   },
   {
     "id": "16",
     "file": "16-nul-byte-path-returns-400-empty-violating-json-error-contract.md",
+    "title": "NUL byte in the URL path returns 400 with empty body and no Error-Name header, violating the documented JSON error contract",
     "severity": "normal",
-    "area": "API",
-    "title": "NUL byte in the URL path returns 400 with empty body and no Error-Name header, violating the documented JSON error contract"
+    "area": "API"
   },
   {
     "id": "17",
     "file": "17-login-non-json-content-type-500-leaks-v8-error.md",
+    "title": "POST /v0/auth/login with a non-JSON Content-Type returns 500 internal_error and leaks a V8 exception string",
     "severity": "normal",
-    "area": "API",
-    "title": "POST /v0/auth/login with a non-JSON Content-Type returns 500 internal_error and leaks a V8 exception string"
+    "area": "API"
   },
   {
     "id": "18",
     "file": "18-nonexistent-order-prepare-returns-calldata.md",
+    "title": "Cancel and reduce prepares return calldata for an order id that does not exist",
     "severity": "normal",
-    "area": "API",
-    "title": "Cancel and reduce prepares return calldata for an order id that does not exist"
+    "area": "API"
   },
   {
     "id": "19",
     "file": "19-leverage-above-doc-max-accepted.md",
+    "title": "Leverage endpoint accepts values far above the documented per-market maximum while amount validation enforces the documented minimum",
     "severity": "normal",
-    "area": "API",
-    "title": "Leverage endpoint accepts values far above the documented per-market maximum while amount validation enforces the documented minimum"
+    "area": "API"
   },
   {
     "id": "20",
     "file": "20-pools-without-stop-order-registry.md",
+    "title": "Nine of twenty-four perps pools have no stop-order registry while the docs advertise TP/SL on every market",
     "severity": "normal",
-    "area": "contracts",
-    "title": "Nine of twenty-four perps pools have no stop-order registry while the docs advertise TP/SL on every market"
+    "area": "contracts"
   },
   {
     "id": "21",
     "file": "21-pools-outside-insurance-tier-ladder.md",
+    "title": "Three pools sit outside the insurance-fund tier while the docs present the Insurance Fund as the standard ladder stage",
     "severity": "normal",
-    "area": "contracts",
-    "title": "Three pools sit outside the insurance-fund tier while the docs present the Insurance Fund as the standard ladder stage"
+    "area": "contracts"
   },
   {
     "id": "22",
     "file": "22-voucher-closed-while-docs-promise-claim.md",
+    "title": "Voucher distributor campaign is over with zero budget and claim() reverts while the docs still promise any address can claim 1,000 USDso",
     "severity": "normal",
-    "area": "contracts",
-    "title": "Voucher distributor campaign is over with zero budget and claim() reverts while the docs still promise any address can claim 1,000 USDso"
+    "area": "contracts"
   },
   {
     "id": "23",
     "file": "23-single-owner-eoa-controls-perps-stack.md",
+    "title": "One EOA owns every core perps contract and the shared pool beacon",
     "severity": "normal",
-    "area": "contracts",
-    "title": "One EOA owns every core perps contract and the shared pool beacon"
+    "area": "contracts"
   },
   {
     "id": "24",
     "file": "24-perps-contracts-source-unverified.md",
+    "title": "No perps contract has published source on the explorer",
     "severity": "normal",
-    "area": "contracts",
-    "title": "No perps contract has published source on the explorer"
+    "area": "contracts"
   },
   {
     "id": "26",
     "file": "26-app-default-landing-market-404.md",
+    "title": "App redirects every visitor to a default market that does not exist in the API registry",
     "severity": "normal",
-    "area": "app",
-    "title": "App redirects every visitor to a default market that does not exist in the API registry"
+    "area": "app"
   },
   {
     "id": "27",
     "file": "27-app-offers-10m-candle-interval-api-rejects.md",
+    "title": "App ships a 10m candle interval option that the candles endpoint and its own OpenAPI spec reject",
     "severity": "normal",
-    "area": "app",
-    "title": "App ships a 10m candle interval option that the candles endpoint and its own OpenAPI spec reject"
+    "area": "app"
   },
   {
     "id": "28",
     "file": "28-bot-kit-shipped-defaults-target-nonexistent-spot-market.md",
+    "title": "Bot kit ships with a default spot symbol that does not exist on the testnet it targets",
     "severity": "normal",
-    "area": "SDK",
-    "title": "Bot kit ships with a default spot symbol that does not exist on the testnet it targets"
+    "area": "SDK"
   },
   {
     "id": "29",
     "file": "29-ws-two-hosts-two-validators-same-surface.md",
+    "title": "Same malformed WebSocket frame returns two different validator messages on the two hosts the kit and docs call \"testnet\"",
     "severity": "normal",
-    "area": "API",
-    "title": "Same malformed WebSocket frame returns two different validator messages on the two hosts the kit and docs call \"testnet\""
+    "area": "API"
   },
   {
     "id": "30",
     "file": "30-ws-path-shapes-spec-docs-slash.md",
+    "title": "One WebSocket feed is published under three different path shapes and the spec's own path variant with a trailing slash 404s",
     "severity": "normal",
-    "area": "docs",
-    "title": "One WebSocket feed is published under three different path shapes and the spec's own path variant with a trailing slash 404s"
+    "area": "docs"
   },
   {
     "id": "31",
     "file": "31-numeric-input-overflows-500-503-leak-internal-versions.md",
+    "title": "Numeric input overflows return 500/503 that leak internal library versions, package names and RPC method names",
     "severity": "major",
-    "area": "API",
-    "title": "Numeric input overflows return 500/503 that leak internal library versions, package names and RPC method names"
+    "area": "API"
   },
   {
     "id": "32",
     "file": "32-no-request-body-size-limit-5mb-echo.md",
+    "title": "Order endpoints accept a 5MB JSON body, answer 500 instead of 413, and echo ~10MB back",
     "severity": "normal",
-    "area": "API",
-    "title": "Order endpoints accept a 5MB JSON body, answer 500 instead of 413, and echo ~10MB back"
+    "area": "API"
   },
   {
     "id": "33",
     "file": "33-known-route-unsupported-method-returns-404-not-405.md",
+    "title": "Known routes answer unsupported HTTP methods with 404 bad_request instead of 405",
     "severity": "normal",
-    "area": "API",
-    "title": "Known routes answer unsupported HTTP methods with 404 bad_request instead of 405"
+    "area": "API"
   },
   {
     "id": "34",
     "file": "34-patch-missing-body-no-content-type-reports-invalid_amount.md",
+    "title": "PATCH with no body and no Content-Type reports invalid_amount instead of invalid_request_body",
     "severity": "normal",
-    "area": "API",
-    "title": "PATCH with no body and no Content-Type reports invalid_amount instead of invalid_request_body"
+    "area": "API"
   },
   {
     "id": "35",
     "file": "35-duplicate-json-keys-accepted-silently.md",
+    "title": "Duplicate JSON keys in an order request are accepted silently (last-key-wins) and produce calldata",
     "severity": "normal",
-    "area": "API",
-    "title": "Duplicate JSON keys in an order request are accepted silently (last-key-wins) and produce calldata"
+    "area": "API"
   },
   {
     "id": "36",
     "file": "36-query-param-validation-lax-limit-hex-unknown-ignored.md",
+    "title": "Query parameter validation is lax: limit accepts non-integer syntax and unknown/negative params are silently ignored",
     "severity": "normal",
-    "area": "API",
-    "title": "Query parameter validation is lax: limit accepts non-integer syntax and unknown/negative params are silently ignored"
+    "area": "API"
   },
   {
     "id": "37",
     "file": "37-404-envelope-uses-undocumented-name-and-omits-error-name-header.md",
+    "title": "404 envelopes use an undocumented error name and skip the Error-Name header the docs promise",
     "severity": "normal",
-    "area": "API",
-    "title": "404 envelopes use an undocumented error name and skip the Error-Name header the docs promise"
+    "area": "API"
   },
   {
     "id": "38",
     "file": "38-margin-deposit-currency-param-ignored-vs-vault-rejection.md",
+    "title": "Margin deposit ignores the currency parameter entirely while the market vault rejects the same values",
     "severity": "normal",
-    "area": "API",
-    "title": "Margin deposit ignores the currency parameter entirely while the market vault rejects the same values"
+    "area": "API"
   },
   {
     "id": "39",
     "file": "39-rate-limit-threshold-and-fixed-retry-after.md",
+    "title": "Rate limiting only trips after high-RPS bursts and every 429 advertises Retry-After: 1",
     "severity": "normal",
-    "area": "API",
-    "title": "Rate limiting only trips after high-RPS bursts and every 429 advertises Retry-After: 1"
+    "area": "API"
   },
   {
     "id": "40",
     "file": "40-gzip-request-body-rejected-as-json-not-415.md",
+    "title": "gzip-compressed request body is rejected as invalid JSON instead of 415 Unsupported Media Type",
     "severity": "normal",
-    "area": "API",
-    "title": "gzip-compressed request body is rejected as invalid JSON instead of 415 Unsupported Media Type"
+    "area": "API"
   },
   {
     "id": "41",
     "file": "41-perp-stop-orders-404-on-all-24-markets-including-15-with-a-registry.md",
+    "title": "Stop-order endpoints return 404 on all 24 perp markets, including the 15 that do have a stop-order registry",
     "severity": "normal",
-    "area": "API",
-    "title": "Stop-order endpoints return 404 on all 24 perp markets, including the 15 that do have a stop-order registry"
+    "area": "API"
   },
   {
     "id": "42",
     "file": "42-dual-listed-symbol-resolves-to-spot-so-perp-side-is-unaddressable.md",
+    "title": "WBTC and WETH are listed as both spot and perp under the identical symbol, and every write resolves to the spot market, leaving the perp side unaddressable",
     "severity": "normal",
-    "area": "API",
-    "title": "WBTC and WETH are listed as both spot and perp under the identical symbol, and every write resolves to the spot market, leaving the perp side unaddressable"
+    "area": "API"
   },
   {
     "id": "43",
     "file": "43-approve-encodes-fee-above-pool-cap-producing-a-transaction-that-always-reverts.md",
+    "title": "builder/approve encodes any max fee the caller asks for, including values above the pool cap, producing a transaction the pool always reverts",
     "severity": "normal",
-    "area": "API",
-    "title": "builder/approve encodes any max fee the caller asks for, including values above the pool cap, producing a transaction the pool always reverts"
+    "area": "API"
   },
   {
     "id": "44",
     "file": "44-spec-omits-maximum-on-builder-fee-fields-while-the-pool-enforces-one.md",
+    "title": "The spec declares the builder-fee ceilings as unbounded integers while every pool enforces a finite on-chain cap",
     "severity": "normal",
-    "area": "docs",
-    "title": "The spec declares the builder-fee ceilings as unbounded integers while every pool enforces a finite on-chain cap"
+    "area": "docs"
   },
   {
     "id": "45",
     "file": "45-vault-approve-returns-http-200-with-a-null-body-for-a-supported-currency.md",
+    "title": "vault/approve answers HTTP 200 with a literal null body for a currency the same endpoint lists as accepted",
     "severity": "normal",
-    "area": "API",
-    "title": "vault/approve answers HTTP 200 with a literal null body for a currency the same endpoint lists as accepted"
+    "area": "API"
   },
   {
     "id": "46",
     "file": "46-spec-production-ws-pathname-404s-only-testnet-accepts-it.md",
+    "title": "The spec's declared production WebSocket pathname 404s on production and staging while testnet accepts it, so spec-generated clients connect only on testnet",
     "severity": "major",
-    "area": "API",
-    "title": "The spec's declared production WebSocket pathname 404s on production and staging while testnet accepts it, so spec-generated clients connect only on testnet"
+    "area": "API"
   },
   {
     "id": "47",
     "file": "47-testnet-spec-nine-channels-production-recognises-five.md",
+    "title": "The testnet spec advertises nine subscribe channels and production recognises five, so four documented channels answer unknown_channel on mainnet",
     "severity": "major",
-    "area": "docs",
-    "title": "The testnet spec advertises nine subscribe channels and production recognises five, so four documented channels answer unknown_channel on mainnet"
+    "area": "docs"
   },
   {
     "id": "48",
     "file": "48-docs-open-interest-cap-is-2x-or-4x-the-on-chain-cap.md",
+    "title": "Trader docs open-interest cap is 2x or 4x the on-chain cap on 20 of 21 markets",
     "severity": "major",
-    "area": "docs",
-    "title": "Trader docs open-interest cap is 2x or 4x the on-chain cap on 20 of 21 markets"
+    "area": "docs"
   },
   {
     "id": "49",
     "file": "49-bot-kit-four-dry-run-parsers-drift.md",
+    "title": "The bot-kit ships four different DRY_RUN parsers, and the value the docs recommend makes one shipped example trade live",
     "severity": "major",
-    "area": "SDK",
-    "title": "The bot-kit ships four different DRY_RUN parsers, and the value the docs recommend makes one shipped example trade live"
+    "area": "SDK"
   },
   {
     "id": "50",
     "file": "50-example-08-env-example-ships-dry-run-0.md",
+    "title": "example-08's template .env ships DRY_RUN=0, so a copied template is a live configuration and `npm start` reflects no deliberate choice",
     "severity": "normal",
-    "area": "docs",
-    "title": "example-08's template .env ships DRY_RUN=0, so a copied template is a live configuration and `npm start` reflects no deliberate choice"
+    "area": "docs"
   },
   {
     "id": "51",
     "file": "51-perp-maker-link-gate-always-ok-without-a-trading-key.md",
+    "title": "perp-maker's link gate answers `ok: true` when there is no trading key, so it can never fail and the live bot runs on without warning",
     "severity": "normal",
-    "area": "SDK",
-    "title": "perp-maker's link gate answers `ok: true` when there is no trading key, so it can never fail and the live bot runs on without warning"
+    "area": "SDK"
   },
   {
     "id": "52",
     "file": "52-sdk-margin-status-fail-open-to-healthy.md",
+    "title": "The margin status reader falls back to \"Healthy\" for any value outside 0-3, so an unreadable status is reported as the safest one",
     "severity": "normal",
-    "area": "SDK",
-    "title": "The margin status reader falls back to \"Healthy\" for any value outside 0-3, so an unreadable status is reported as the safest one"
+    "area": "SDK"
   },
   {
     "id": "53",
     "file": "53-chain-id-override-is-never-checked-against-the-rpc.md",
+    "title": "CHAIN_ID is a free-form override with no range check and no cross-check against the RPC, so a typo signs against one chain while reading another",
     "severity": "normal",
-    "area": "SDK",
-    "title": "CHAIN_ID is a free-form override with no range check and no cross-check against the RPC, so a typo signs against one chain while reading another"
+    "area": "SDK"
   }
 ]

@@ -25,8 +25,6 @@ public burst  175 RPS -> 104/1243 = 429, Retry-After: 1
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, 2026-10-19 (UTC): API: https://api.testnet.dreamdex.io (chain 50312) Auth: fresh SIWE bearer minted for this test
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-Testnet 2026-10-19 (UTC):
-- API: https://api.testnet.dreamdex.io (chain 50312)
-- Auth: fresh SIWE bearer minted for this test
 - Re-run: every step is a plain curl

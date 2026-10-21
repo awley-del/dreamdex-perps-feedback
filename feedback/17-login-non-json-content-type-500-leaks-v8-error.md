@@ -20,4 +20,7 @@ The unauthenticated public auth endpoint 500s on a plain malformed request and e
 Fresh runs 10:39 UTC, 2 runs x 3 variants, bodies as quoted (this lane's session capture), docs capture evidence/reval-20261019/docs/developers_http-api_error-handling.txt (invalid_request_body row + internal_error row), earlier one-off in evidence/reval-20261019/sdk/stress-run3.jsonl.
 
 ## Environment
-SDK: python requests 2.x / curl 8.5.0. Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0/auth/login`. Wallet: n/a (unauthenticated, request rejected before signature parsing). Evidence date: 2026-10-19 10:30-10:50 UTC.
+- SDK: python requests 2.x / curl 8.5.0.
+- Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0/auth/login`.
+- Wallet: n/a (unauthenticated, request rejected before signature parsing).
+- Evidence date: 2026-10-19 10:30-10:50 UTC.

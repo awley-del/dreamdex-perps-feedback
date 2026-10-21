@@ -26,6 +26,5 @@ Fresh eth_call results, 19 October 2026 (two independent passes):
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026 Contracts: MarginBank 0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-- Chain: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026
-- Contracts: MarginBank 0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E

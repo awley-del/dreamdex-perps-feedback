@@ -25,8 +25,6 @@ lane runs 12:26/12:29 UTC: 1MB and 5MB bodies, same 500, never 413
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, 2026-10-19 (UTC): API: https://api.testnet.dreamdex.io (chain 50312) Auth: fresh SIWE bearer minted for this test
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-Testnet 2026-10-19 (UTC):
-- API: https://api.testnet.dreamdex.io (chain 50312)
-- Auth: fresh SIWE bearer minted for this test
 - Re-run: every step is a plain curl

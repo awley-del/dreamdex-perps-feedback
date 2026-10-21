@@ -39,7 +39,7 @@ So a client that reads `Error-Name` as documented gets an answer for a known-sym
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Auth: fresh SIWE bearer minted for this test
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-Somnia Tokyo testnet — REST API deployment on chain 50312 (`https://api.testnet.dreamdex.io`). Tested 2026-10-19, re-run 2026-10-20 15:45 UTC.
-- Auth: fresh SIWE bearer minted for this test
+- Somnia Tokyo testnet — REST API deployment on chain 50312 (`https://api.testnet.dreamdex.io`). Tested 2026-10-19, re-run 2026-10-20 15:45 UTC.
 - Re-run: every step is a plain curl

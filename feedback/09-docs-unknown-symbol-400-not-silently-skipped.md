@@ -17,4 +17,7 @@ HTTP 400 `{"status":400,"name":"invalid_param","description":"unknown market sym
 evidence/reval-20261019/docs/ob_unknown.body + ob_unknown.hdr (fresh 10:30 UTC re-run returned the same 400 body quoted above); docs capture evidence/reval-20261019/docs/developers_http-api_market-data.txt (contains both quoted passages).
 
 ## Environment
-SDK: curl 8.5.0 / any HTTP client. Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0`. Wallet: n/a (unauthenticated GET). Evidence date: 2026-10-19 10:30-10:50 UTC.
+- SDK: curl 8.5.0 / any HTTP client.
+- Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0`.
+- Wallet: n/a (unauthenticated GET).
+- Evidence date: 2026-10-19 10:30-10:50 UTC.

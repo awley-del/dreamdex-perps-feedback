@@ -15,5 +15,7 @@ Area: app
 Raw response: evidence/reval-20261019/F21_cdn_listing.xml
 
 ## Environment
-Network: Somnia Tokyo testnet assets CDN. SDK: n/a (raw HTTP). Wallet: n/a.
-Evidence date: 2026-10-19 09:47-09:52 UTC
+- SDK: n/a (raw HTTP).
+- Network: Somnia Tokyo testnet assets CDN.
+- Wallet: n/a.
+- Evidence date: 2026-10-19 09:47-09:52 UTC

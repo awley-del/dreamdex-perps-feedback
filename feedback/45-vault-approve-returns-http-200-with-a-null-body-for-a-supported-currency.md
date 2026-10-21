@@ -28,5 +28,8 @@ Reproduced 3 of 3 runs on 2026-10-20, with the controls below in the same batch:
 - `evidence/lane-new-20261020/vault_retest.json` — the earlier ladder showing the same endpoint returning `encoded=None` for every SOMI amount while USDso encodes normally.
 
 ## Environment
+
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
-API `https://api.testnet.dreamdex.io/v0`, Somnia Tokyo testnet chainId 50312. Auth: SIWE bearer from a fresh testnet wallet. Date: 2026-10-20.
+- Network: API `https://api.testnet.dreamdex.io/v0`, Somnia Tokyo testnet chainId 50312. Auth: SIWE bearer from a fresh testnet wallet.
+- Date: 2026-10-20.
+- Wallet: throwaway testnet wallet used for SIWE auth only; no funds, no signature, no transaction broadcast

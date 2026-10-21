@@ -15,5 +15,7 @@ Area: API
 Raw scrape: evidence/reval-20261019/F20_metrics.txt; auth matrix: evidence/reval-20261019/F20_v0_matrix.json; public spec: `https://api.testnet.dreamdex.io/.well-known/oapi.json`
 
 ## Environment
-Network: Somnia Tokyo testnet (chainId 50312). SDK: n/a (raw HTTP). Wallet: n/a.
-Evidence date: 2026-10-19 09:47-09:52 UTC
+- SDK: n/a (raw HTTP).
+- Network: Somnia Tokyo testnet (chainId 50312).
+- Wallet: n/a.
+- Evidence date: 2026-10-19 09:47-09:52 UTC

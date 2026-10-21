@@ -30,5 +30,5 @@ Fresh eth_call owner() results, 19 October 2026 (two independent passes, identic
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Network: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-- Chain: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026

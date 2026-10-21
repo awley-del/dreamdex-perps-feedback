@@ -26,5 +26,8 @@ This is separate from the on-chain registry gap reported earlier for nine pools.
 - Raw: `curl -s -H "authorization: Bearer $TOK" 'https://api.testnet.dreamdex.io/v0/markets/SOL:USDso/stop-orders'`
 
 ## Environment
+
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
-Chain: Somnia Tokyo testnet, chainId 50312. API: `https://api.testnet.dreamdex.io/v0`. Authenticated with a freshly minted test wallet through SIWE. Evidence date: 2026-10-20.
+- Network: Somnia Tokyo testnet, chainId 50312. API: `https://api.testnet.dreamdex.io/v0`. Authenticated with a freshly minted test wallet through SIWE.
+- Evidence date: 2026-10-20.
+- Wallet: throwaway testnet wallet used for SIWE auth only; no funds, no signature over calldata, no transaction broadcast

@@ -17,4 +17,7 @@ HTTP 400 with the documented JSON envelope and the Error-Name header, like every
 evidence/reval-20261019/sdk/repro-A.json, evidence/reval-20261019/sdk/stress-run1.jsonl (raw header captures, first occurrence), fresh re-run 10:37 UTC twice with identical empty 400 responses; docs capture evidence/reval-20261019/docs/developers_http-api_error-handling.txt.
 
 ## Environment
-SDK: curl 8.5.0 (--path-as-is) / python requests. Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0`. Wallet: n/a (unauthenticated). Evidence date: 2026-10-19 10:30-10:50 UTC.
+- SDK: curl 8.5.0 (--path-as-is) / python requests.
+- Network: Somnia Tokyo testnet, `https://api.testnet.dreamdex.io/v0`.
+- Wallet: n/a (unauthenticated).
+- Evidence date: 2026-10-19 10:30-10:50 UTC.
