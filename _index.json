@@ -299,5 +299,40 @@
   "severity": "major",
   "area": "docs",
   "title": "Trader docs open-interest cap is 2x or 4x the on-chain cap on 20 of 21 markets"
+ },
+ {
+  "id": 49,
+  "file": "49-bot-kit-four-dry-run-parsers-drift.md",
+  "severity": "major",
+  "area": "SDK",
+  "title": "The bot-kit ships four different DRY_RUN parsers, and the value the docs recommend makes one of the shipped examples trade live"
+ },
+ {
+  "id": 50,
+  "file": "50-example-08-env-example-ships-dry-run-0.md",
+  "severity": "normal",
+  "area": "docs",
+  "title": "example-08 ships DRY_RUN=0 in its template .env, so copying the example file as-is runs a funded wallet live"
+ },
+ {
+  "id": 51,
+  "file": "51-perp-maker-link-gate-always-ok-without-a-trading-key.md",
+  "severity": "normal",
+  "area": "SDK",
+  "title": "perp-maker's link gate answers `ok: true` when there is no trading key, so it can never fail and the live bot runs on without warning"
+ },
+ {
+  "id": 52,
+  "file": "52-sdk-margin-status-fail-open-to-healthy.md",
+  "severity": "normal",
+  "area": "SDK",
+  "title": "The margin status reader falls back to \"Healthy\" for any value outside 0-3, so an unreadable status is reported as the safest one"
+ },
+ {
+  "id": 53,
+  "file": "53-chain-id-override-is-never-checked-against-the-rpc.md",
+  "severity": "normal",
+  "area": "SDK",
+  "title": "CHAIN_ID is a free-form override with no range check and no cross-check against the RPC, so a typo signs against one chain while reading another"
  }
 ]
