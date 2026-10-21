@@ -71,5 +71,5 @@ $ grep -rn "READ_ONLY" examples/08-regime-multistrategy/.env.example docs/*.md e
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-- Network: n/a — offline evaluation of shipped source, no RPC and no endpoint contacted
+- Network: n/a — offline evaluation of shipped source for Somnia Tokyo testnet; no RPC and no endpoint contacted
 2026-10-21 (UTC). Read-only inspection of the shipped bot-kit `0.1.0` templates and run scripts; no `.env` was created from them and no order was placed. The finding is the template shipping the live value under a comment describing the safe one; it is not an observed live trade, and the README's `npm run dry` line is acknowledged above as overriding the file correctly.

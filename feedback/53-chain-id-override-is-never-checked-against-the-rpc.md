@@ -48,5 +48,7 @@ src/writer.ts:509        if (executor.chainId !== chain.id) {
 Every one of them compares the configured id against another configured id. None of them asks the endpoint what chain it is serving.
 
 ## Environment
+- SDK: `@dreamdex-bot-kit/perp-core` 0.1.0, `@somnia-chain/markets-sdk` 0.30.0 / 0.32.1
+- Network: Somnia Tokyo testnet — override accepted against `CHAIN_ID` with no cross-check against the RPC's `eth_chainId`; no RPC contacted for this item
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
 2026-10-21 (UTC). Read-only source inspection of `@dreamdex-bot-kit/perp-core@0.1.0` and `@somnia-chain/markets-sdk@0.30.0` / `0.32.1`. No transaction was signed and no wrong-chain run was executed; the finding is the missing validation at the point the override is accepted. Related and already reported separately: the testnet chain ids themselves (50383 for the perps contracts, 50312 shipped in the app) — this item is the bot-kit's failure to reconcile the two.

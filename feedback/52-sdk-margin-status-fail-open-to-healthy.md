@@ -46,5 +46,7 @@ hunts/dreamdex/recon/botkit/node_modules/@somnia-chain/markets-sdk   version 0.3
 Related, same reader: `src/perp/margin.ts` reports `asOfBlock` alongside the status in the `0.32.1` shape (`:100`), but the account-level read at `:213` returns the same fields without pinning a block, so two consumers of "margin status" can be looking at different chain heights.
 
 ## Environment
+- SDK: `@somnia-chain/markets-sdk` 0.32.1 (and 0.30.0, both checked)
+- Network: n/a — offline evaluation against the Somnia Tokyo testnet SDK build; no RPC and no endpoint contacted
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
 2026-10-21 (UTC). Static inspection of `@somnia-chain/markets-sdk` `0.32.1` and `0.30.0` as installed, no RPC call and no fabricated chain state. The claim is the shape of the fallback for values outside `0-3`; it does not assert that any live pool currently emits such a value, and no such value was observed on-chain.

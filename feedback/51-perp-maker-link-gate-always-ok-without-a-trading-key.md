@@ -66,5 +66,5 @@ Note the related gap in the same message: `linkProblem` (`packages/perp-core/src
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
 - Wallet: n/a — no wallet, no signature, no transaction broadcast
-- Network: n/a — offline evaluation of shipped source, no RPC and no endpoint contacted
+- Network: n/a — offline evaluation of shipped source for Somnia Tokyo testnet; no RPC and no endpoint contacted
 2026-10-21 (UTC). Read-only source inspection of `@dreamdex-bot-kit/perp-core@0.1.0` and `perp-maker@0.1.0`. No key, no RPC call, no order placed. The reachability of `process.exit(1)` is shown statically: `tradingKeyCheck` has no return path producing `ok: false` when `ctx.tradingKey` is undefined, and none of the three `!key` branches sets it.

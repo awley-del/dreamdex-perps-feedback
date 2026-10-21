@@ -20,4 +20,5 @@ The docs list the host that serves the perps surface — or make clear that the 
 
 ## Environment
 - SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
-Network: docs + unauthenticated GETs, 2026-10-20. Wallet: n/a.
+- Network: Somnia Tokyo testnet — `api.testnet.dreamdex.io` and `stg.api.dreamdex.io` (both serve chain id 50312), perps contracts on Hideki 50383. Docs and unauthenticated `GET`s only, 2026-10-20.
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
