@@ -44,4 +44,7 @@ Raw probe output: `ws_matrix_prod_vs_testnet_20261020.json`, `async_testnet_2026
 Note the shape of the drift: `channels` is not where the channel list lives in either file — it holds exactly one entry, `public` at address `/public`, the transport channel. Any count taken from `channels` yields one. The nine names are the `SubscribeRequest` union arms, which is why the two environments can advertise different feed sets under the same `channels` block.
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
+- Network: Somnia Tokyo testnet, HTTP/WebSocket deployment on chainId 50312 (no chain RPC call in this item)
 2026-10-20 (UTC). Hosts: api.dreamdex.io, stg.api.dreamdex.io, api.testnet.dreamdex.io. Read-only: one subscribe frame per channel against public market data, no auth token, no order, no state change. The `positions` and `order` subscriptions were sent without a bearer token on every host, which is why their testnet result is `subscription_failed` rather than a data feed — that is not the claim here; the claim is only which names each build recognises, and the control channel proves the recognition check is sound.

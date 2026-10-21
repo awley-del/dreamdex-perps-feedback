@@ -28,4 +28,5 @@ So for the two symbols that exist on both planes there is no documented way to r
 - `evidence/lane-new-20261020/ambiguity.json` — endpoint-by-endpoint resolution of the symbol across the surface.
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
 Chain: Somnia Tokyo testnet, chainId 50312. API: `https://api.testnet.dreamdex.io/v0`. Authenticated with a freshly minted test wallet through SIWE. Evidence date: 2026-10-20.

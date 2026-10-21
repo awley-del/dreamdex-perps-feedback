@@ -23,6 +23,8 @@ PUT /v0/orders -> HTTP 404 body {"status":404,"name":"bad_request"}
 ```
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 Testnet 2026-10-19 (UTC):
 - API: https://api.testnet.dreamdex.io (chain 50312)
 - Auth: fresh SIWE bearer minted for this test

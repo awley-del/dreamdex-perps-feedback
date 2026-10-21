@@ -24,5 +24,7 @@ Fresh explorer API probes, 19 October 2026 (two independent passes, identical ou
 - per-address responses: {"is_verified": false, "name": null, "proxy_type": "eip1967" | null} for every address in the list above
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 - Explorer API: https://shannon-explorer.somnia.network/api/v2/smart-contracts/{address}
 - Chain: Somnia Tokyo testnet, chainId 50312, 19 October 2026

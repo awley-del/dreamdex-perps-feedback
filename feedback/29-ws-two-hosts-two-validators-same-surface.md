@@ -25,6 +25,8 @@ run1 / runB / runC       → byte-identical per host, all 3 runs
 ```
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 Testnet 2026-10-19 (UTC):
 - App: https://app.testnet.dreamdex.io
 - API: https://api.testnet.dreamdex.io

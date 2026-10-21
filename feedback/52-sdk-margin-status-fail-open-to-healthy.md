@@ -30,7 +30,7 @@ The version spread matters for triage: this is not a regression introduced in th
 
 ## Evidence
 ```
-/tmp/ddsdk/node_modules/@somnia-chain/markets-sdk   version 0.32.1
+node_modules/@somnia-chain/markets-sdk   version 0.32.1
   24: *  `"Healthy"` (equity ≥ IM) · `"MarginCall"` (IM > equity ≥ MM) ·
   29: export type MarginStatus = "Healthy" | "MarginCall" | "PartialLiquidation" | "CloseOut";
   36: export const MARGIN_STATUS: readonly MarginStatus[] = ["Healthy", "MarginCall", "PartialLiquidation", "CloseOut"];
@@ -46,4 +46,5 @@ hunts/dreamdex/recon/botkit/node_modules/@somnia-chain/markets-sdk   version 0.3
 Related, same reader: `src/perp/margin.ts` reports `asOfBlock` alongside the status in the `0.32.1` shape (`:100`), but the account-level read at `:213` returns the same fields without pinning a block, so two consumers of "margin status" can be looking at different chain heights.
 
 ## Environment
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 2026-10-21 (UTC). Static inspection of `@somnia-chain/markets-sdk` `0.32.1` and `0.30.0` as installed, no RPC call and no fabricated chain state. The claim is the shape of the fallback for values outside `0-3`; it does not assert that any live pool currently emits such a value, and no such value was observed on-chain.

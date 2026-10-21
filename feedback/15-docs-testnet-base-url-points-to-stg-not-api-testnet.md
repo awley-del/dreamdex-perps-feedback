@@ -16,7 +16,8 @@ The docs list the host that serves the perps surface — or make clear that the 
 - Neither host is the perps chain. The perps developer page puts perps on Hideki, chain 50383 (`https://docs.dreamdex.io/developers/perps-testnet`: RPC api.hideki2.infra.testnet.somnia.network, factory 0xE631fAEE547baeE07353E290f0562ea67d856560), while both HTTP hosts above serve chainId 50312 rows. So the base-URL table documents a third surface (stg, 50312), the perps host is undocumented, and nothing in the docs maps 50312 REST rows to the 50383 chain a perps client actually trades on.
 
 ## Evidence
-`/tmp/dddocs/developers_http-api*.txt` (docs capture, base-URL table), `stg.api.dreamdex.io/.well-known/oapi.json` vs `api.testnet.dreamdex.io/.well-known/oapi.json` (51 vs 54 paths, servers), `GET /v0/markets` on both hosts (rows carry chainId 50312), `https://docs.dreamdex.io/developers/perps-testnet` (Hideki 50383 block), and `eth_chainId` on both RPCs: `0xc4cf` (50383) vs `0xc488` (50312).
+`https://docs.dreamdex.io/developers/http-api` base-URL table, `stg.api.dreamdex.io/.well-known/oapi.json` vs `api.testnet.dreamdex.io/.well-known/oapi.json` (51 vs 54 paths, servers), `GET /v0/markets` on both hosts (rows carry chainId 50312), `https://docs.dreamdex.io/developers/perps-testnet` (Hideki 50383 block), and `eth_chainId` on both RPCs: `0xc4cf` (50383) vs `0xc488` (50312).
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
 Network: docs + unauthenticated GETs, 2026-10-20. Wallet: n/a.

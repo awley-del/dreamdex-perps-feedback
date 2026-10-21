@@ -23,6 +23,8 @@ The server silently uses the last occurrence and builds a ready-to-sign transact
 ```
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 Testnet 2026-10-19 (UTC):
 - API: https://api.testnet.dreamdex.io (chain 50312)
 - Auth: fresh SIWE bearer minted for this test

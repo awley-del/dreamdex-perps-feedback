@@ -22,5 +22,7 @@ For the nine markets above the perps TP/SL plane has no contract to call. The or
 - Docs quote (orders page): "Take profit and stop loss A take profit (TP) closes a position when the price reaches your target, and a stop loss (SL) closes it when the price moves against you. Both are reduce-only. Set them on a new order, or on an open position from the positions table."
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 - Chain: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026
 - Contracts: PerpPoolFactory 0x516d2cb6de41bE98444e887793946E65989Ba07b (owner of the registry wiring)

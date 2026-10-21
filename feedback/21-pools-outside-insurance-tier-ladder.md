@@ -25,5 +25,7 @@ Fresh eth_call results, 19 October 2026 (two independent passes):
 - Docs quote: "If closing on the book is not enough, the protocol escalates: a registered backstop bidder can take the position over, the Insurance Fund covers any remaining shortfall, and only when both are exhausted does auto-deleveraging (ADL) start. ... No backstop bidders are registered on testnet, so the later stages come in sooner."
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 - Chain: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026
 - Contracts: MarginBank 0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E

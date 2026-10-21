@@ -28,6 +28,8 @@ kit defaults             → operator-setup.ts, order-history.ts, examples/06, R
 ```
 
 ## Environment
+- SDK: @dreamdex-bot-kit 0.1.0 (cloned upstream)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 Testnet 2026-10-19 (UTC):
 - App: https://app.testnet.dreamdex.io
 - API: https://api.testnet.dreamdex.io

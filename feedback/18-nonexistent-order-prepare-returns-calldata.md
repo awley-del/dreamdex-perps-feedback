@@ -38,6 +38,7 @@ So the API's 200 prepare is a guaranteed-failing transaction: the caller signs a
 On-chain check (read-only eth_call, no transaction): both prepared calldata payloads revert on the pool contract with the custom error `IncorrectOrder()` (selector 0x8080c2ed) — the "ready to sign" transaction the API returns can never succeed.
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
 - API: https://api.testnet.dreamdex.io (v0), 19 October 2026
 - Network: Somnia Tokyo testnet, chainId 50312 (calldata chainId field `0xc488`)
 - Auth: bearer from SIWE login, own fresh testnet wallet

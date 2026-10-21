@@ -33,4 +33,6 @@ The affected surface is the whole approval path, because a builder that follows 
 - Custom errors resolved from the shipped ABI: `BuilderFeeExceedsCap()` = `0xf559e808`.
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 Chain: Somnia Tokyo testnet, chainId 50312, RPC `https://50312.rpc.thirdweb.com`. API `https://api.testnet.dreamdex.io/v0`. Pool `0x440f5a79857cd632ae45439410969c3f4049cc41`. Evidence date: 2026-10-20.

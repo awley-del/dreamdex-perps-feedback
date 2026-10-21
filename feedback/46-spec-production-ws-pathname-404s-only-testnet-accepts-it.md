@@ -40,6 +40,9 @@ probe api.testnet.dreamdex.io/v0/ws   -> {"operation":"pong","serverTimestamp":�
 Probe script and raw JSON: `ws_paths.py`, `ws_matrix_prod_vs_testnet_20261020.json`.
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
+- Network: Somnia Tokyo testnet, HTTP/WebSocket deployment on chainId 50312 (no chain RPC call in this item)
 2026-10-20 (UTC):
 - Specs: `https://api.testnet.dreamdex.io/.well-known/async.json` (sha256 d74f2c0a…, 62,793 bytes), `https://api.dreamdex.io/.well-known/async.json` (sha256 04778aa3…, 41,094 bytes)
 - Hosts probed: api.dreamdex.io, stg.api.dreamdex.io, api.testnet.dreamdex.io

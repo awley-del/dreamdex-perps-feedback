@@ -38,6 +38,8 @@ GET /v0/markets/NOPE:USDso        -> 404 {"status":404,"name":"market_not_found"
 So a client that reads `Error-Name` as documented gets an answer for a known-symbol miss and nothing at all for any unknown path.
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 Somnia Tokyo testnet — REST API deployment on chain 50312 (`https://api.testnet.dreamdex.io`). Tested 2026-10-19, re-run 2026-10-20 15:45 UTC.
 - Auth: fresh SIWE bearer minted for this test
 - Re-run: every step is a plain curl

@@ -29,4 +29,6 @@ Fresh eth_call owner() results, 19 October 2026 (two independent passes, identic
 - poolBeacon = 0xd58596620ee6951b2958a931949e4ff7ce6222be
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 - Chain: Somnia Tokyo testnet, chainId 50312, RPC https://50312.rpc.thirdweb.com, 19 October 2026

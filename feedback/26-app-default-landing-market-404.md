@@ -33,6 +33,8 @@ $ curl -s 'https://api.testnet.dreamdex.io/v0/markets' | <filter STT>
 Note: `/v0/markets?kind=event` and the `kind` enum (`spot|perp|event|all`) were checked and are fine — this report is only about the default landing market.
 
 ## Environment
+- SDK: n/a (raw HTTP/JSON-RPC, no SDK used)
+- Wallet: n/a — no wallet, no signature, no transaction broadcast
 Testnet 2026-10-19 (UTC):
 - App: https://app.testnet.dreamdex.io
 - API: https://api.testnet.dreamdex.io
