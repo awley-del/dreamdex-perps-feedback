@@ -37,7 +37,7 @@ node_modules/@somnia-chain/markets-sdk   version 0.32.1
   99:     marginStatus: MARGIN_STATUS[Number(statusRaw)] ?? "Healthy",
  213:   return { equity, imReq, mmReq, cmReq, marginStatus: MARGIN_STATUS[Number(statusRaw)] ?? "Healthy" };
 
-hunts/dreamdex/recon/botkit/node_modules/@somnia-chain/markets-sdk   version 0.30.0
+node_modules/@somnia-chain/markets-sdk   version 0.30.0 (bot-kit lockfile)
   34: export const MARGIN_STATUS: readonly MarginStatus[] = ["Healthy", "MarginCall", "PartialLiquidation", "CloseOut"];
   91:     marginStatus: MARGIN_STATUS[Number(statusRaw)] ?? "Healthy",
  133:   return { equity, imReq, mmReq, cmReq, marginStatus: MARGIN_STATUS[Number(statusRaw)] ?? "Healthy" };
